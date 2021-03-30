@@ -1,2 +1,2 @@
 # piivault-curl
-Demo code using PIIVault APIs with cURL
+Demo using PIIVault APIs with cURL

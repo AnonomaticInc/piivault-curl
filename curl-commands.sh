@@ -26,18 +26,18 @@ __root="$(cd "$(dirname "${__dir}")" && pwd)" # <-- change this as it depends on
 
 # 2. Copy the token from the JSON Payload of the above response to here
 
-API_TOKEN=token-returned-from-login
+API_TOKEN=YourApiTokenHere
 
 # 3. Try out the apis below! 
 # NOTE: Uncomment each curl command in turn
 
 ## -- PUT GetPolyId --
 
-#curl -v \
-# -X PUT "https://api.piivault.com/api/profiles/GetPolyId" \
-# -H "Authorization: Bearer ${API_TOKEN}" \
-# -H "Content-Type: application/json" \
-# -H "Content-Type: application/json" -d @test-profile.json
+curl -v \
+ -X PUT "https://api.piivault.com/api/profiles/GetPolyId" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -H "Content-Type: application/json" -d @test-profile-min.json
 
 ## -- PUT PolyIdBulk --
 

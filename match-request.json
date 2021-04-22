@@ -1,0 +1,9 @@
+{
+"AccountIds": [ "88fb13a4-b14d-b1fb-cac5-9da45ad29a51", "2cb1211b-214a-728b-a40f-1939503ba153" ],
+"MatchProcs": [
+		{ "Name": "TestProc",
+			"Expr": "LHS.SourceSystemKey = RHS.SourceSystemKey AND LHS.Email like '%.F3Q'"
+		}
+	]
+}
+

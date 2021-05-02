@@ -44,11 +44,11 @@ __root="$(cd "$(dirname "${__dir}")" && pwd)" # <-- change this as it depends on
 HOSTNAME=localhost:62291
 #JSON2SEND=sunder-test-10k.json
 
-ACCOUNTID_1=88fb13a4-b14d-b1fb-cac5-9da45ad29a51
-APIKEY_1=3a98wl4UBxWpDTbDPF8DCLkaKe6Vfosb
+ACCOUNTID_1=a657eeb1-d28f-bf6b-2c05-01e0cf9f4a51
+APIKEY_1=MdrG1FNgFHQDqHATJzjH7QfICRGmg1yu
 
-ACCOUNTID_2=2cb1211b-214a-728b-a40f-1939503ba153
-APIKEY_2=KGVgpjdXWtSmD0SzkeZio6rFXcWHmwZn
+ACCOUNTID_2=
+APIKEY_2=
 
 # ./curl-commands.sh --HOSTNAME "localhost:53043" --VERB PurgeAccountProfile --ACCOUNTID 88fb13a4-b14d-b1fb-cac5-9da45ad29a51 --APIKEY 3a98wl4UBxWpDTbDPF8DCLkaKe6Vfosb
 # ./curl-commands.sh --HOSTNAME "localhost:53043" --VERB GetPolyIdBulk --ACCOUNTID 88fb13a4-b14d-b1fb-cac5-9da45ad29a51 --APIKEY 3a98wl4UBxWpDTbDPF8DCLkaKe6Vfosb --REQUEST sunder-test-10k.json
@@ -138,7 +138,7 @@ echo
 echo "START /api/profiles/ForgetProfile: $(date)"
 echo
 
-curl -v \
+curl -k \
  -X PUT "https://${HOSTNAME}/api/profiles/ForgetProfile" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
@@ -196,6 +196,42 @@ curl -k \
 
 echo
 echo "END   GetMatchList: $(date)"
+echo
+
+;;
+
+GetProfileFromSourceKey)
+## -- Generate match table --
+echo
+echo "START GetProfileFromSourceKey: $(date)"
+echo
+
+time curl -k \
+ -X POST "https://${HOSTNAME}/api/profiles/GetProfileFromSourceKey" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.'
+
+echo
+echo "END   GetProfileFromSourceKey: $(date)"
+echo
+
+;;
+
+GetProfileFromPolyId)
+## -- Generate match table --
+echo
+echo "START GetProfileFromPolyId: $(date)"
+echo
+
+time curl -k \
+ -X POST "https://${HOSTNAME}/api/profiles/GetProfileFromPolyId" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.'
+
+echo
+echo "END   GetProfileFromPolyId: $(date)"
 echo
 
 ;;

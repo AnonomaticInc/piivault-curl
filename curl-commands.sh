@@ -15,45 +15,14 @@ __root="$(cd "$(dirname "${__dir}")" && pwd)" # <-- change this as it depends on
 
 #arg1="${1:-}"
 
-# Lindsay
-#
-# SubscriptionId: 4e5d7305-0cc6-6d6b-6453-cc16be164e68
-#
-#
-# Web Access https://piivault.web
-# Email: llawrence.dev@gmail.com
-# Password: HNYAHS6E
-#
-# API Access https://piivault.web.api
-# AccountId: 2cb1211b-214a-728b-a40f-1939503ba153
-# ApiKey: KGVgpjdXWtSmD0SzkeZio6rFXcWHmwZn
-#
-# Lindsay
-#
-# SubscriptionId: 4e5d7305-0cc6-6d6b-6453-cc16be164e68
-#
-#
-# Web Access
-# Email: lindsay@anonomatic.com
-# Password: OPBN45JR
-#
-# API Access
-# AccountId: 88fb13a4-b14d-b1fb-cac5-9da45ad29a51
-# ApiKey: 3a98wl4UBxWpDTbDPF8DCLkaKe6Vfosb
-
-HOSTNAME=localhost:62291
-#JSON2SEND=sunder-test-10k.json
-
-ACCOUNTID_1=a657eeb1-d28f-bf6b-2c05-01e0cf9f4a51
-APIKEY_1=MdrG1FNgFHQDqHATJzjH7QfICRGmg1yu
-
-ACCOUNTID_2=
-APIKEY_2=
-
 # ./curl-commands.sh --HOSTNAME "localhost:53043" --VERB PurgeAccountProfile --ACCOUNTID 88fb13a4-b14d-b1fb-cac5-9da45ad29a51 --APIKEY 3a98wl4UBxWpDTbDPF8DCLkaKe6Vfosb
 # ./curl-commands.sh --HOSTNAME "localhost:53043" --VERB GetPolyIdBulk --ACCOUNTID 88fb13a4-b14d-b1fb-cac5-9da45ad29a51 --APIKEY 3a98wl4UBxWpDTbDPF8DCLkaKe6Vfosb --REQUEST sunder-test-10k.json
 # ./curl-commands.sh --HOSTNAME "localhost:53043" --VERB Match --ACCOUNTID 88fb13a4-b14d-b1fb-cac5-9da45ad29a51 --APIKEY 3a98wl4UBxWpDTbDPF8DCLkaKe6Vfosb --REQUEST match-request.json
 # ./curl-commands.sh --HOSTNAME "localhost:53043" --VERB GetProfilePseudonym --ACCOUNTID 88fb13a4-b14d-b1fb-cac5-9da45ad29a51 --APIKEY 3a98wl4UBxWpDTbDPF8DCLkaKe6Vfosb --REQUEST getprofilepseudonym-request.json
+
+HOSTNAME=${PIIVAULT_HOSTNAME}
+ACCOUNTID=${PIIVAULT_ACCOUNTID}
+APIKEY=${PIIVAULT_APIKEY}
 
 while [ $# -gt 0 ]; do
 

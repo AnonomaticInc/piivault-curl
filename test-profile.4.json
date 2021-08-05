@@ -1,0 +1,69 @@
+    {
+      "Index": 1,
+      "Seed": 97,
+      "SourceSystemKey": "82bf97a1-6eec-4a1d-8670-598805828111",
+      "FirstName": "Godfrey",
+      "MiddleName": "X",
+      "LastName": "Schroeder",
+      "OrgName": "vertical applications",
+      "DateOfBirth": "1952-03-01T00:00:00.000Z",
+      "Gender": "Trans*Woman",
+      "IsForgotten": 0,
+      "Emails": [
+        {
+          "EmailAddressType": "Work",
+          "EmailAddress": "Norene11@example.net"
+        },
+        {
+          "EmailAddressType": "Home",
+          "EmailAddress": "Terrill.Terry@gmail.com"
+        }
+      ],
+      "Phones": [
+        {
+          "PhoneType": "Mobile",
+          "PhoneOwner": "Kreiger Group",
+          "PhoneNumber": "934-342-7440 x17844"
+        },
+        {
+          "PhoneType": "Work",
+          "PhoneOwner": "Dietrich, Schmidt and Emard",
+          "PhoneNumber": "1-717-645-8572"
+        }
+      ],
+      "Addresses": [
+        {
+          "AddressType": "Home",
+          "StreetAddress1": "3245 Dagmar Inlet",
+          "StreetAddress2": "Suite 042",
+          "City": "Alexaneville",
+          "StateCode": "Washington",
+          "PostalCode": "16055-8592",
+          "County": "Buckinghamshire",
+          "Country": "Lao People's Democratic Republic"
+        },
+        {
+          "AddressType": "Work",
+          "StreetAddress1": "004 Leann Gateway",
+          "StreetAddress2": "Suite 857",
+          "City": "Sierraton",
+          "StateCode": "Idaho",
+          "PostalCode": "87125",
+          "County": "Buckinghamshire",
+          "Country": "Cyprus"
+        }
+      ],
+      "Keys": [
+        {
+          "KeyType": "Vehicle",
+          "KeyValue": "SCKU0A91VXKJ31651"
+        },
+        {
+          "KeyType": "SecretKey",
+          "KeyValue": "voluptas omnis et"
+        }
+      ],
+      "SourceSystemName": "Pollich LLC",
+      "SubSourceSystemName": "District Implementation Planner"
+    }
+    

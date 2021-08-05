@@ -1,0 +1,10 @@
+{
+"AccountIds": [ "a657eeb1-d28f-bf6b-2c05-01e0cf9f4a51", "a9640e8f-9a5e-cb1b-2bcd-dc07e3a66b68" ],
+"MatchProcs": [
+		{
+			"Name": "TestProc",
+			"Expr": "LHS.SourceSystemKey = RHS.SourceSystemKey"
+		}
+	]
+}
+

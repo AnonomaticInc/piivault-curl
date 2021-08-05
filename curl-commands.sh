@@ -40,14 +40,21 @@ case $VERB in
 login)
 # 1. Use the AccountId, and API Key provided by Anonomatic to get a Bearer Token
 # -- POST login --
-rm api-token.txt
+rm -f api-token.txt
 
 curl -k \
 	-X POST "https://${HOSTNAME}/api/auth/login" \
 	-H "Content-Type: application/json" \
 -d "{ \"AccountId\": \"${ACCOUNTID}\", \"ApiKey\": \"${APIKEY}\" }" \
 > api-token.txt
+
+echo -- -- -- -- API TOKEN -- -- -- -- 
+cat api-token.txt
+echo
+echo -- -- -- -- API TOKEN -- -- -- -- 
+
 exit
+
 
 ;;
 
@@ -69,7 +76,7 @@ echo
 echo "START //${HOSTNAME}/api/profiles/GetPolyId: $(date)"
 echo
 
-curl -v \
+curl -k \
  -X PUT "https://${HOSTNAME}/api/profiles/GetPolyId" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
@@ -88,7 +95,7 @@ echo
 echo "START //${HOSTNAME}/api/profiles/GetPolyIdBulk: $(date)"
 echo
 
-curl -k \
+curl -s -k -v --compressed \
  -X PUT "https://${HOSTNAME}/api/profiles/GetPolyIdBulk" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
@@ -96,6 +103,29 @@ curl -k \
 
 echo
 echo "FINIS GetPolyIdBulk: $(date)"
+echo
+
+;;
+
+GetPolyIdWithPseudonym)
+## -- PUT PolyIdBulk --
+
+echo
+echo "START //${HOSTNAME}/api/profiles/GetPolyIdWithPseudonym: $(date)"
+echo
+
+rm -f ./getpolyid-response.json
+
+curl -s -k -v --compressed \
+ -X PUT "https://${HOSTNAME}/api/profiles/GetPolyIdWithPseudonym" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.' # > getpolyid-reponse.json
+
+cat ./getpolyid-response.json
+
+echo
+echo "FINIS GetPolyIdWithPseudonym: $(date)"
 echo
 
 ;;
@@ -115,6 +145,25 @@ curl -k \
 
 echo
 echo "FINIS ForgetProfile: $(date)"
+echo
+
+;;
+
+DeleteProfile)
+#  -- PUT /api/profiles/ForgetProfile --
+
+echo
+echo "START /api/profiles/DeleteProfile: $(date)"
+echo
+
+curl -k \
+ -X PUT "https://${HOSTNAME}/api/profiles/DeleteProfile" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -H "Content-Type: application/json" -d @${RESPONSE}
+
+echo
+echo "FINIS DeleteProfile: $(date)"
 echo
 
 ;;
@@ -169,38 +218,22 @@ echo
 
 ;;
 
-GetProfileFromSourceKey)
+GetProfile)
 ## -- Generate match table --
 echo
-echo "START GetProfileFromSourceKey: $(date)"
+echo "START GetProfile: $(date)"
 echo
 
 time curl -k \
- -X POST "https://${HOSTNAME}/api/profiles/GetProfileFromSourceKey" \
+ -X POST "https://${HOSTNAME}/api/profiles/GetProfile" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.'
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > getprofile-response.json
+
+cat ./getprofile-response.json
 
 echo
-echo "END   GetProfileFromSourceKey: $(date)"
-echo
-
-;;
-
-GetProfileFromPolyId)
-## -- Generate match table --
-echo
-echo "START GetProfileFromPolyId: $(date)"
-echo
-
-time curl -k \
- -X POST "https://${HOSTNAME}/api/profiles/GetProfileFromPolyId" \
- -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.'
-
-echo
-echo "END   GetProfileFromPolyId: $(date)"
+echo "END   GetProfile: $(date)"
 echo
 
 ;;
@@ -217,8 +250,29 @@ time curl -k \
  -H "Content-Type: application/json" \
  -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > getprofilepseudonym-response.json
 
+
+cat ./getprofilepseudonym-response.json
+
 echo
 echo "FINIS GetProfilePseudonym: $(date)"
+echo
+
+;;
+
+RedactText)
+
+echo
+echo "START //${HOSTNAME}/api/profiles/RedactText: $(date)"
+echo
+
+time curl -k \
+ -X POST "https://${HOSTNAME}/api/profiles/RedactText" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > redact-response.json
+
+echo
+echo "FINIS RedactText: $(date)"
 echo
 
 ;;

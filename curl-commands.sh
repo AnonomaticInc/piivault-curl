@@ -95,7 +95,7 @@ echo
 echo "START //${HOSTNAME}/api/profiles/GetPolyIdBulk: $(date)"
 echo
 
-curl -s -k -v --compressed \
+curl -s -k --compressed \
  -X PUT "https://${HOSTNAME}/api/profiles/GetPolyIdBulk" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
@@ -141,7 +141,7 @@ curl -k \
  -X PUT "https://${HOSTNAME}/api/profiles/ForgetProfile" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${RESPONSE}
+ -H "Content-Type: application/json" -d @${REQUEST}
 
 echo
 echo "FINIS ForgetProfile: $(date)"
@@ -160,7 +160,7 @@ curl -k \
  -X PUT "https://${HOSTNAME}/api/profiles/DeleteProfile" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${RESPONSE}
+ -H "Content-Type: application/json" -d @${REQUEST}
 
 echo
 echo "FINIS DeleteProfile: $(date)"

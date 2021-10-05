@@ -48,10 +48,10 @@ curl -k \
 -d "{ \"AccountId\": \"${ACCOUNTID}\", \"ApiKey\": \"${APIKEY}\" }" \
 > api-token.txt
 
-echo -- -- -- -- API TOKEN -- -- -- -- 
+echo -- -- -- -- API TOKEN -- -- -- --
 cat api-token.txt
 echo
-echo -- -- -- -- API TOKEN -- -- -- -- 
+echo -- -- -- -- API TOKEN -- -- -- --
 
 exit
 
@@ -69,6 +69,22 @@ API_TOKEN=$(jq -r ".Data.Token" api-token.txt)
 # 3. Try out the apis below!
 case $VERB in
 
+GetKeyTypes)
+
+echo
+echo "START //${HOSTNAME}/api/profiles/GetKeyTypes: $(date)"
+echo
+
+curl -k \
+ -X GET "https://${HOSTNAME}/api/profiles/GetKeyTypes" \
+ -H "Authorization: Bearer ${API_TOKEN}"  | jq '.'
+
+echo
+echo "FINIS GetKeyTypes: $(date)"
+echo
+
+;;
+
 GetPolyId)
 ## -- PUT GetPolyId --
 
@@ -80,7 +96,7 @@ curl -k \
  -X PUT "https://${HOSTNAME}/api/profiles/GetPolyId" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST} > getpolyid-response.json
+ -H "Content-Type: application/json" -d @${REQUEST}  | jq '.' > getpolyid-response.json
 
 echo
 echo "FINIS GetPolyId: $(date)"
@@ -126,6 +142,29 @@ cat ./getpolyid-response.json
 
 echo
 echo "FINIS GetPolyIdWithPseudonym: $(date)"
+echo
+
+;;
+
+GetPolyIdWithPseudonymBulk)
+## -- PUT PolyIdBulk --
+
+echo
+echo "START //${HOSTNAME}/api/profiles/GetPolyIdWithPseudonymBulk: $(date)"
+echo
+
+rm -f ./getpolyidwithpseudonym-response.json
+
+curl -s -k --compressed \
+ -X PUT "https://${HOSTNAME}/api/profiles/GetPolyIdWithPseudonymBulk" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./getpolyidpseudonym-reponse.json
+
+head -n 200 ./getpolyidpseudonym-reponse.json
+
+echo
+echo "FINIS GetPolyIdWithPseudonymBulk: $(date)"
 echo
 
 ;;
@@ -193,7 +232,7 @@ echo "START GenerateMatchTable: $(date)"
 echo
 
 time curl -k \
- -X POST "https://${HOSTNAME}/api/match" \
+ -X POST "https://${HOSTNAME}/api/match?test=1" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
  -H "Content-Type: application/json" -d @${REQUEST}

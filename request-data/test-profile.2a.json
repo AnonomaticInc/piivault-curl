@@ -1,0 +1,67 @@
+{
+    "Addresses": [
+        {
+            "AddressType": "Home",
+            "City": "Austin",
+            "Country": "Niger",
+            "County": "Avon",
+            "PostalCode": "11090-0079",
+            "StateCode": "Oregon",
+            "StreetAddress1": "7831 Zella Ville",
+            "StreetAddress2": "Apt. 549"
+        },
+        {
+            "AddressType": "Work",
+            "City": "Beierton",
+            "Country": "Uzbekistan",
+            "County": "Cambridgeshire",
+            "PostalCode": "37617-3491",
+            "StateCode": "Hawaii",
+            "StreetAddress1": "06990 Robel Forge",
+            "StreetAddress2": "Apt. 258"
+        }
+    ],
+    "DateOfBirth": "1998-03-01T00:00:00.000Z",
+    "Emails": [
+        {
+            "EmailAddress": "Wilhelmine_Weimann@example.com",
+            "EmailAddressType": "Work"
+        },
+        {
+            "EmailAddress": "Maximilian.Keeling32@gmail.com",
+            "EmailAddressType": "Home"
+        }
+    ],
+    "FirstName": "Lavina",
+    "Gender": "M",
+    "Index": 1,
+    "IsForgotten": 0,
+    "Keys": [
+        {
+            "KeyType": "Vehicle",
+            "KeyValue": "G4GA62MXP1ZD78344"
+        },
+        {
+            "KeyType": "SecretKey",
+            "KeyValue": "molestiae est suscipit"
+        }
+    ],
+    "LastName": "Becker",
+    "MiddleName": "U",
+    "OrgName": "clicks-and-mortar architectures",
+    "Phones": [
+        {
+            "PhoneNumber": "978.808.9217 x650",
+            "PhoneOwner": "Auer - Cummings",
+            "PhoneType": "Mobile"
+        },
+        {
+            "PhoneNumber": "711.903.4854 x888",
+            "PhoneOwner": "Langworth - Bins",
+            "PhoneType": "Work"
+        }
+    ],
+    "SourceSystemKey": "b7db2832-66c4-4934-9fd1-a0f65778a540",
+    "SourceSystemName": "Boyle - Streich",
+    "SubSourceSystemName": "Forward Directives Strategist"
+}

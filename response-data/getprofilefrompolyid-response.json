@@ -1,0 +1,108 @@
+--VERB GetProfileFromPolyId
+--REQUEST ./getprofilefrompolyid-request.json
+
+START GetProfileFromPolyId: Sat 15 May 2021 10:13:39 PM PDT
+
+{
+  "Data": {
+    "Index": 0,
+    "PolyId": "90e1c839-3324-462b-e59b-ef226226b27f",
+    "CreatedAt": "2021-05-16T04:16:27.7388586",
+    "UpdatedAt": "2021-05-16T04:16:27.7388586",
+    "SourceSystemKey": "7f8dbe76-0a35-448b-8143-d3b373d055fc",
+    "FirstName": "Rachel",
+    "MiddleName": "W",
+    "LastName": "Pouros",
+    "OrgName": "vertical e-business",
+    "DateOfBirth": "1947-05-01T00:00:00",
+    "Gender": "F2M",
+    "IsForgotten": 0,
+    "Emails": [
+      {
+        "EmailType": "",
+        "EmailAddress": "valentine.shields14@example.org",
+        "CreatedAt": "2021-05-16T04:16:27.7388586"
+      },
+      {
+        "EmailType": "",
+        "EmailAddress": "norval.king84@yahoo.com",
+        "CreatedAt": "2021-05-16T04:16:27.7388586"
+      }
+    ],
+    "Phones": [
+      {
+        "PhoneType": "Mobile",
+        "PhoneOwner": "Bogisich and Sons",
+        "PhoneNumber": "(830) 332-5465",
+        "CreatedAt": "2021-05-16T04:16:27.7388586"
+      },
+      {
+        "PhoneType": "Work",
+        "PhoneOwner": "Paucek, Oberbrunner and Cronin",
+        "PhoneNumber": "(490) 552-7223",
+        "CreatedAt": "2021-05-16T04:16:27.7388586"
+      }
+    ],
+    "Addresses": [
+      {
+        "AddressType": "Home",
+        "StreetAddress1": "985 Judge Summit",
+        "StreetAddress2": "Apt. 545",
+        "StreetAddress3": "",
+        "StreetAddress4": "",
+        "City": "Lake Derekton",
+        "StateCode": "Pennsylvania",
+        "PostalCode": "22214",
+        "County": "Avon",
+        "Country": "Madagascar",
+        "CreatedAt": "2021-05-16T04:16:27.7388586"
+      },
+      {
+        "AddressType": "Work",
+        "StreetAddress1": "7200 Krajcik Drive",
+        "StreetAddress2": "Apt. 966",
+        "StreetAddress3": "",
+        "StreetAddress4": "",
+        "City": "Port Hannahmouth",
+        "StateCode": "Montana",
+        "PostalCode": "88661",
+        "County": "Bedfordshire",
+        "Country": "Cote d'Ivoire",
+        "CreatedAt": "2021-05-16T04:16:27.7388586"
+      }
+    ],
+    "Keys": [
+      {
+        "KeyType": "Vehicle",
+        "KeyValue": "YS8VU6NW1JEM25209",
+        "CreatedAt": "2021-05-16T04:16:27.7388586"
+      },
+      {
+        "KeyType": "SecretKey",
+        "KeyValue": "sapiente quisquam ut",
+        "CreatedAt": "2021-05-16T04:16:27.7388586"
+      }
+    ],
+    "Names": [
+      {
+        "FirstName": "Rachel",
+        "MiddleName": "W",
+        "LastName": "Pouros",
+        "CreatedAt": "2021-05-16T04:16:27.7388586"
+      }
+    ],
+    "Orgs": [
+      {
+        "OrgName": "vertical e-business",
+        "CreatedAt": "2021-05-16T04:16:27.7388586"
+      }
+    ],
+    "SourceSystemName": "Sipes - Ebert",
+    "SubSourceSystemName": "Customer Directives Orchestrator"
+  },
+  "Success": true,
+  "Error": null
+}
+
+END   GetProfileFromPolyId: Sat 15 May 2021 10:13:48 PM PDT
+

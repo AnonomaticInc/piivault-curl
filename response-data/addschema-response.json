@@ -1,0 +1,11 @@
+{
+  "Data": {
+    "SchemaId": "64488f1e-ca09-487f-9aff-306bedb12b52",
+    "SchemaName": "FirstSchema",
+    "SchemaValue": "The value for this schema; updated",
+    "CreatedAt": "2021-10-15T00:34:25.1327704+00:00",
+    "UpdatedAt": "2021-10-15T00:34:25.1327738+00:00"
+  },
+  "Success": true,
+  "Error": null
+}

@@ -96,7 +96,7 @@ curl -k \
  -X PUT "https://${HOSTNAME}/api/profiles/GetPolyId" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST}  | jq '.' > getpolyid-response.json
+ -H "Content-Type: application/json" -d @${REQUEST}  | jq '.' > ./response-data/getpolyid-response.json
 
 echo
 echo "FINIS GetPolyId: $(date)"
@@ -115,7 +115,7 @@ curl -s -k --compressed \
  -X PUT "https://${HOSTNAME}/api/profiles/GetPolyIdBulk" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > getpolyidbulk-reponse.json
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/getpolyidbulk-reponse.json
 
 echo
 echo "FINIS GetPolyIdBulk: $(date)"
@@ -130,15 +130,15 @@ echo
 echo "START //${HOSTNAME}/api/profiles/GetPolyIdWithPseudonym: $(date)"
 echo
 
-rm -f ./getpolyid-response.json
+rm -f ./reponse-data/getpolyid-response.json
 
 curl -s -k -v --compressed \
  -X PUT "https://${HOSTNAME}/api/profiles/GetPolyIdWithPseudonym" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' # > getpolyid-reponse.json
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/getpolyid-reponse.json
 
-cat ./getpolyid-response.json
+head -n 200 ./response-data/getpolyid-response.json
 
 echo
 echo "FINIS GetPolyIdWithPseudonym: $(date)"
@@ -153,15 +153,15 @@ echo
 echo "START //${HOSTNAME}/api/profiles/GetPolyIdWithPseudonymBulk: $(date)"
 echo
 
-rm -f ./getpolyidwithpseudonym-response.json
+rm -f ./response-data/getpolyidwithpseudonym-response.json
 
 curl -s -k --compressed \
  -X PUT "https://${HOSTNAME}/api/profiles/GetPolyIdWithPseudonymBulk" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./getpolyidpseudonym-reponse.json
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/getpolyidpseudonym-reponse.json
 
-head -n 200 ./getpolyidpseudonym-reponse.json
+head -n 200 ./response-data/getpolyidpseudonym-reponse.json
 
 echo
 echo "FINIS GetPolyIdWithPseudonymBulk: $(date)"
@@ -249,12 +249,13 @@ echo
 
 curl -k \
  "https://${HOSTNAME}/api/match" \
- -H "Authorization: Bearer ${API_TOKEN}" | jq '.' >  match-response.json
+ -H "Authorization: Bearer ${API_TOKEN}" | jq '.' >  ./response-data/match-response.json
 
 echo
 echo "END   GetMatchList: $(date)"
 echo
 
+head -n 200 ./response-data/match-response.json
 ;;
 
 GetProfile)
@@ -267,9 +268,9 @@ time curl -k \
  -X POST "https://${HOSTNAME}/api/profiles/GetProfile" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > getprofile-response.json
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/getprofile-response.json
 
-cat ./getprofile-response.json
+cat ./response-data/getprofile-response.json
 
 echo
 echo "END   GetProfile: $(date)"
@@ -287,10 +288,10 @@ time curl -k \
  -X PUT "https://${HOSTNAME}/api/profiles/GetProfilePseudonym" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > getprofilepseudonym-response.json
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/getprofilepseudonym-response.json
 
 
-cat ./getprofilepseudonym-response.json
+cat ./response-data/getprofilepseudonym-response.json
 
 echo
 echo "FINIS GetProfilePseudonym: $(date)"
@@ -308,11 +309,109 @@ time curl -k \
  -X POST "https://${HOSTNAME}/api/profiles/RedactText" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > redact-response.json
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/redact-response.json
 
 echo
 echo "FINIS RedactText: $(date)"
 echo
+
+cat ./response-data/redact-response.json
+
+;;
+
+# -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+GetSchema)
+
+echo
+echo "START //${HOSTNAME}/api/schema/GetSchema/${NAMEORID}"
+echo
+
+time curl -k \
+ -X GET "https://${HOSTNAME}/api/schema/GetSchema/${NAMEORID}" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" | jq '.' > ./response-data/getschema-response.json
+
+echo
+echo "FINIS GetSchema"
+echo
+
+cat ./response-data/getschema-response.json
+
+;;
+
+GetAllSchema)
+
+echo
+echo "START //${HOSTNAME}/api/schema/GetAllSchema"
+echo
+
+time curl -k \
+ -X GET "https://${HOSTNAME}/api/schema/GetAllSchema" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" | jq '.' > ./response-data/getallschema-response.json
+
+echo
+echo "FINIS GetAllSchema"
+echo
+
+cat ./response-data/getallschema-response.json
+
+;;
+
+AddSchema)
+
+echo
+echo "START //${HOSTNAME}/api/schema/AddSchema"
+echo
+
+time curl -k \
+ -X POST "https://${HOSTNAME}/api/schema/AddSchema" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/addschema-response.json
+
+echo
+echo "FINIS AddSchema"
+echo
+
+cat ./response-data/addschema-response.json
+
+;;
+
+UpdateSchema)
+
+echo
+echo "START //${HOSTNAME}/api/schema/UpdateSchema"
+echo
+
+time curl -k \
+ -X PUT "https://${HOSTNAME}/api/schema/UpdateSchema" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/updateschema-response.json
+
+echo
+echo "FINIS UpdateSchema"
+echo
+
+cat ./response-data/updateschema-response.json
+
+;;
+
+DeleteSchema)
+
+echo
+echo "START //${HOSTNAME}/api/schema/DeleteSchema/${NAMEORID}"
+echo
+
+time curl -k \
+ -X PUT "https://${HOSTNAME}/api/schema/DeleteSchema/${NAMEORID}" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json"  | jq '.' > ./response-data/deleteschema-response.json
+
+echo
+echo "FINIS DeleteSchema"
+echo
+
+cat ./response-data/deleteschema-response.json
 
 ;;
 

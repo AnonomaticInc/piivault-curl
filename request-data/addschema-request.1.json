@@ -1,6 +1,6 @@
 {
-    "SchemaId": "2394465e-f952-4ac0-bc68-3d5d69877199",
+	"SchemaGroup": "GroupTwo",
     "SchemaName": "FirstSchemaUpdated",
-    "SchemaValue": "The value for this schema; updated"
+    "SchemaValue": "The value for this schema"
 }
 

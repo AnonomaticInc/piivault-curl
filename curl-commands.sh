@@ -102,6 +102,8 @@ echo
 echo "FINIS GetPolyId: $(date)"
 echo
 
+cat ./response-data/getpolyid-response.json
+
 ;;
 
 GetPolyIdBulk)
@@ -320,14 +322,71 @@ cat ./response-data/redact-response.json
 ;;
 
 # -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-GetSchema)
+GetSchemaById)
 
 echo
-echo "START //${HOSTNAME}/api/schema/GetSchema/${NAMEORID}"
+echo "START //${HOSTNAME}/api/schema/GetSchema/${SCHEMAID}"
 echo
 
 time curl -k \
- -X GET "https://${HOSTNAME}/api/schema/GetSchema/${NAMEORID}" \
+ -X GET "https://${HOSTNAME}/api/schema/GetSchema/${SCHEMAID}" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" | jq '.' > ./response-data/getschema-response.json
+
+echo
+echo "FINIS GetSchema"
+echo
+
+cat ./response-data/getschema-response.json
+
+;;
+
+GetSchemaByName)
+
+echo
+echo "START //${HOSTNAME}/api/schema/GetSchema/${SCHEMAGROUP}/${SCHEMANAME}"
+echo
+
+time curl -k \
+ -X GET "https://${HOSTNAME}/api/schema/GetSchema/${SCHEMAGROUP}/${SCHEMANAME}" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" | jq '.' > ./response-data/getschema-response.json
+
+echo
+echo "FINIS GetSchema"
+echo
+
+cat ./response-data/getschema-response.json
+
+;;
+
+GetSchemaGroups)
+
+echo
+echo "START //${HOSTNAME}/api/schema/GetSchemaGroups"
+echo
+
+time curl -k \
+ -X GET "https://${HOSTNAME}/api/schema/GetSchemaGroups" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" | jq '.' > ./response-data/getschema-response.json
+
+echo
+echo "FINIS GetSchema"
+echo
+
+cat ./response-data/getschema-response.json
+
+;;
+
+GetSchemaGroup)
+
+echo
+echo "START //${HOSTNAME}/api/schema/GetSchemaGroup/${SCHEMAGROUP}"
+echo
+
+time curl -k \
+ -X GET "https://${HOSTNAME}/api/schema/GetSchemaGroup/${SCHEMAGROUP}" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" | jq '.' > ./response-data/getschema-response.json
 
@@ -399,11 +458,11 @@ cat ./response-data/updateschema-response.json
 DeleteSchema)
 
 echo
-echo "START //${HOSTNAME}/api/schema/DeleteSchema/${NAMEORID}"
+echo "START //${HOSTNAME}/api/schema/DeleteSchema/${SCHEMAID}"
 echo
 
 time curl -k \
- -X PUT "https://${HOSTNAME}/api/schema/DeleteSchema/${NAMEORID}" \
+ -X PUT "https://${HOSTNAME}/api/schema/DeleteSchema/${SCHEMAID}" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json"  | jq '.' > ./response-data/deleteschema-response.json
 

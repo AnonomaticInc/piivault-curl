@@ -4,7 +4,7 @@
 
 set -o errexit
 set -o pipefail
-set -o nounset
+#set -o nounset
 #set -o xtrace  # echo each line executed
 
 # Set magic variables for current file & dir
@@ -344,11 +344,11 @@ cat ./response-data/getschema-response.json
 GetSchemaByName)
 
 echo
-echo "START //${HOSTNAME}/api/schema/GetSchema/${SCHEMAGROUP}/${SCHEMANAME}"
+echo "START //${HOSTNAME}/api/schema/GetSchema/${SCHEMAGROUP}/${SCHEMASUBGROUP}/${SCHEMANAME}"
 echo
 
 time curl -k \
- -X GET "https://${HOSTNAME}/api/schema/GetSchema/${SCHEMAGROUP}/${SCHEMANAME}" \
+ -X GET "https://${HOSTNAME}/api/schema/GetSchema/${SCHEMAGROUP}/${SCHEMASUBGROUP}/${SCHEMANAME}" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" | jq '.' > ./response-data/getschema-response.json
 
@@ -372,7 +372,26 @@ time curl -k \
  -H "Content-Type: application/json" | jq '.' > ./response-data/getschema-response.json
 
 echo
-echo "FINIS GetSchema"
+echo "FINIS GetSchemaGroups"
+echo
+
+cat ./response-data/getschema-response.json
+
+;;
+
+GetSchemaSubGroups)
+
+echo
+echo "START //${HOSTNAME}/api/schema/GetSchemaSubGroups/${SCHEMAGROUP}"
+echo
+
+time curl -k \
+ -X GET "https://${HOSTNAME}/api/schema/GetSchemaSubGroups/${SCHEMAGROUP}" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" | jq '.' > ./response-data/getschema-response.json
+
+echo
+echo "FINIS GetSchemaSubGroups"
 echo
 
 cat ./response-data/getschema-response.json
@@ -391,7 +410,26 @@ time curl -k \
  -H "Content-Type: application/json" | jq '.' > ./response-data/getschema-response.json
 
 echo
-echo "FINIS GetSchema"
+echo "FINIS GetSchemaGroup"
+echo
+
+cat ./response-data/getschema-response.json
+
+;;
+
+GetSchemaSubGroup)
+
+echo
+echo "START //${HOSTNAME}/api/schema/GetSchemaSubGroup/${SCHEMAGROUP}/${SCHEMASUBGROUP}"
+echo
+
+time curl -k \
+ -X GET "https://${HOSTNAME}/api/schema/GetSchemaSubGroup/${SCHEMAGROUP}/${SCHEMASUBGROUP}" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" | jq '.' > ./response-data/getschema-response.json
+
+echo
+echo "FINIS GetSchemaSubGroup"
 echo
 
 cat ./response-data/getschema-response.json

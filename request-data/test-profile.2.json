@@ -61,6 +61,11 @@
             "PhoneType": "Work"
         }
     ],
+    "Names": [{
+	"FirstName": "Lindsay",
+	"MiddleName": "John",
+	"LastName": "Lawrence"
+}],
     "SourceSystemKey": "b7db2832-66c4-4934-9fd1-a0f65778a540",
     "SourceSystemName": "Boyle - Streich",
     "SubSourceSystemName": "Forward Directives Strategist"

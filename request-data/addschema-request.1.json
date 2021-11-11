@@ -1,6 +1,6 @@
 {
 	"SchemaGroup": "GroupTwo",
-    "SchemaName": "FirstSchemaUpdated",
-    "SchemaValue": "The value for this schema"
+	"SchemaName": "FirstSchema",
+	"SchemaValue": "The value for this schema"
 }
 

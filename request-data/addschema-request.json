@@ -1,7 +1,8 @@
 {
-	"SchemaId": "b16d4e00-6273-441d-8515-d92a0a97e89c",
+	"SchemaId": "39db4ece-c00a-4f9a-93a7-94abd989fa1d",
 	"SchemaGroup": "GroupTwo",
-	"SchemaName": "FirstSchemaUpdated",
+	"SchemaSubGroup": "",
+	"SchemaName": "FirstSchema",
 	"SchemaValue": "The value for this schema"
 }
 

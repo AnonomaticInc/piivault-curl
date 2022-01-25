@@ -3,7 +3,7 @@
 "MatchProcs": [
 		{
 			"Name": "TestProc1",
-			"Expr": "LHS.FirstNam = RHS.LastName",
+			"Expr": "LHS.FirstName = RHS.LastName",
 			"ConfidenceLevel":75 
 		},
 		{

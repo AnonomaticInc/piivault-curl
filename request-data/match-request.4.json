@@ -1,0 +1,10 @@
+{
+"AccountIds": [ ],
+"MatchProcs": [
+		{
+			"Name": "TestProc",
+			"Expr": "(select nicknamegroupint from matchnickname where nickname like LHS.FirstName) IN (select nicknamegroupint from matchnickname where nickname like RHS.FirstName)"
+		}
+	]
+}
+

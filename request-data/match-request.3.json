@@ -3,7 +3,7 @@
 "MatchProcs": [
 		{
 			"Name": "TestProc",
-			"Expr": "LHS.SourceSystemKey = RHS.SourceSystemKey"
+			"Expr": "LHS.FirstName = RHS.FirstName"
 		}
 	]
 }

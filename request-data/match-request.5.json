@@ -1,0 +1,11 @@
+{
+"AccountIds": [ ],
+"MatchProcs": [
+		{
+			"Name": "TestProc",
+			"MatchFields": ["", ""],
+			"Expr": "LHS.FirstNameAliasId = RHS.FirstNameAliasId"
+		}
+	]
+}
+

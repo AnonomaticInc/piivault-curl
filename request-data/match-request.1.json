@@ -3,7 +3,8 @@
 "MatchProcs": [
 		{
 			"Name": "TestProc",
-			"Expr": "LHS.SourceSystemKey = RHS.SourceSystemKey"
+			"MatchFields": ["StreetAddress1"],
+			"Expr": "LHS.StreetAddress1 ='049 Jakubowski Mills'"
 		}
 	]
 }

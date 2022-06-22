@@ -3,8 +3,8 @@
 "MatchProcs": [
 		{
 			"Name": "TestProc",
-			"MatchFields": ["", ""],
-			"Expr": "LHS.FirstNameAliasId = RHS.FirstNameAliasId"
+			"MatchFields": ["Email"],
+			"Expr": "(LHS.Email = 'Pearl.Pfannerstill@example.net') AND (LHS.Email = RHS.Email)"
 		}
 	]
 }

@@ -1,17 +1,24 @@
 # piivault-curl
+
 Demo using PIIVault APIs with cURL (see curl-commands.sh for details)
 
 For linux; ubuntun, debian based systems:
 
 ---- PIIVault Docker ----
 
-docker run --name piivaultapi -h piivaultapi -p 0.0.0.0:9443:443 -p 0.0.0.0:9480:80 -e "PIIVAULT_SECRETS_KEY=<secrets-key-from-anonomatic>" -e "ASPNETCORE_URLS=https://+:443;http://+:80" --detach anonomatic/piivaultwebapi:latest
+You need to have access to a running vault. Contact Anonomatic if you don't already have one.
 
-https://localhost:9443/index.html -- Swagger API
-  
-https://localhost:9443/ui -- Manage subscriptions in given vault instance; create subscription with accounts and apikey
+**API documentation**
 
----- PIIVault Curl ----
+https://{HOST}/piivault) -- PIIVault Core API
+https://{HOST}/passthrough) -- PIIVault Passthrough API 
+
+PIIVault UI
+
+https://{HOST}/piivault/ui) -- Manage subscriptions in given vault instance; create subscription with accounts and apikey
+https://{HOST}/passthrough/ui) -- A reference implementation of using the Passthrough APIs
+
+---- PIIVault Curl Example ----
 
   export PIIVAULT_HOSTNAME="localhost:9443"
   export PIIVAULT_ACCOUNTID=<subscription-account-id>

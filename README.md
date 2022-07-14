@@ -4,20 +4,21 @@ Demo using PIIVault APIs with cURL (see curl-commands.sh for details)
 
 For linux; ubuntun, debian based systems:
 
-#### PIIVault Docker ####
+### PIIVault ###
 
-You need to have access to a running vault. Contact Anonomatic if you don't already have one.
+You need to have access to a running PIIVault instance. 
+You can create a Trial account at [https://api.anonomatic.com] or contact [https://anonomatic.com](Anonomatic) for an on-premise install.
 
-** API documentation **
+#### API documentation ####
 
-https://{HOST}/piivault) PIIVault Core API
+[https://{HOST}/piivault] PIIVault Core API
 
-https://{HOST}/passthrough) PIIVault Passthrough API 
+[https://{HOST}/passthrough] PIIVault Passthrough API 
 
-** PIIVault UI **
+#### PIIVault UI ####
 
-https://{HOST}/piivault/ui) Manage subscriptions in given vault instance; create subscription with accounts and apikey
-https://{HOST}/passthrough/ui) A reference implementation of using the Passthrough APIs
+[https://{HOST}/piivault/ui] Manage subscriptions in given vault instance; create subscription with accounts and apikey
+[https://{HOST}/passthrough/ui] A reference implementation of using the Passthrough APIs
 
 #### PIIVault Curl Example ####
 

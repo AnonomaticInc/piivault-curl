@@ -7,8 +7,8 @@ For linux; ubuntu, debian based systems.
 
 ### PIIVault ###
 
-You need to have access to a running PIIVault instance. 
-You can create a Trial account at our [online demo instance](https://api.anonomatic.com/piivault/ui) or contact [Anonomatic Inc](https://anonomatic.com "PII Compliance made Easy") for an on-premise install.
+An ``account id`` and ``api key`` for an active PII Vault subscription is required to run the examples.
+You can create a Trial subscription at our [online demo instance](https://api.anonomatic.com/piivault/ui) or contact [Anonomatic Inc](https://anonomatic.com "PII Compliance made Easy") for an on-premise install.
 
 ---
 #### PII Vault API documentation ####

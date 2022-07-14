@@ -1,9 +1,7 @@
 # Anonomatic PII Vault #
 ---
 
-Examples of using PIIVault APIs with cURL (see script files `piivault-curl.sh` and `passthrough-curl.sh` for details)
-
-For linux; ubuntu, debian based systems.
+Examples of using the PIIVault APIs with cURL (see script files `piivault-curl.sh` and `passthrough-curl.sh` for details)
 
 ### PIIVault ###
 
@@ -26,15 +24,15 @@ You can create a Trial subscription at our [online demo instance](https://api.an
 ---
 #### PIIVault Curl Example ####
 
-  export PIIVAULT_HOSTNAME="localhost:9443"
-  export PIIVAULT_ACCOUNTID=<subscription-account-id>
-  export PIIVAULT_APIKEY=<subscription-account-apikey>
+    export PIIVAULT_HOSTNAME="localhost:9443"
+    export PIIVAULT_ACCOUNTID=<subscription-account-id>
+    export PIIVAULT_APIKEY=<subscription-account-apikey>
 
-  rm getpolyidbulk-reponse.json
+    rm getpolyidbulk-reponse.json
 
-  ./curl-commands.sh --VERB login
+    ./curl-commands.sh --VERB login
 
-  time ./curl-commands.sh --VERB GetPolyIdBulk --REQUEST ./test-profiles-100.1.json
+    time ./curl-commands.sh --VERB GetPolyIdBulk --REQUEST ./test-profiles-100.1.json
 
-  less getpolyidbulk-reponse.json
+    less getpolyidbulk-reponse.json
 

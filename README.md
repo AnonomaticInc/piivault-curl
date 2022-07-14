@@ -1,25 +1,29 @@
-# piivault-curl
+# Anonomatic PII Vault #
+---
 
-Demo using PIIVault APIs with cURL (see curl-commands.sh for details)
+Examples of using PIIVault APIs with cURL (see script files `piivault-curl.sh` and `passthrough-curl.sh` for details)
 
-For linux; ubuntun, debian based systems:
+For linux; ubuntu, debian based systems.
 
 ### PIIVault ###
 
 You need to have access to a running PIIVault instance. 
-You can create a Trial account at [https://api.anonomatic.com] or contact [https://anonomatic.com](Anonomatic) for an on-premise install.
+You can create a Trial account at our [online demo instance](https://api.anonomatic.com/piivault/ui) or contact [Anonomatic Inc](https://anonomatic.com "PII Compliance made Easy") for an on-premise install.
 
-#### API documentation ####
+---
+#### PII Vault API documentation ####
 
-[https://{HOST}/piivault] PIIVault Core API
+[PII Vault Core API](https://{HOST}/piivault)
 
-[https://{HOST}/passthrough] PIIVault Passthrough API 
+[PII Vault Passthrough API](https://{HOST}/passthrough)
 
-#### PIIVault UI ####
+#### PII Vault UI ####
 
-[https://{HOST}/piivault/ui] Manage subscriptions in given vault instance; create subscription with accounts and apikey
-[https://{HOST}/passthrough/ui] A reference implementation of using the Passthrough APIs
+[PII Vault Admin](https://HOSTNAME/piivault/ui) Manage subscriptions in given vault instance; create subscription with accounts and apikey
 
+[PII Vault Passthrough](https://HOSTNAME/passthrough/ui) A reference implementation of using the Passthrough APIs
+
+---
 #### PIIVault Curl Example ####
 
   export PIIVAULT_HOSTNAME="localhost:9443"

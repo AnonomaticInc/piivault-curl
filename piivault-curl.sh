@@ -215,23 +215,43 @@ echo
 ;;
 
 DeleteProfile)
-#  -- PUT /piivault/api/profiles/ForgetProfile --
-
+## -- Generate match table --
 echo
-echo "START /piivault/api/profiles/DeleteProfile: $(date)"
+echo "START DeleteProfile: $(date)"
 echo
 
-curl -k \
+time curl -k \
  -X PUT "https://${HOSTNAME}/piivault/api/profiles/DeleteProfile" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST}
+ -H "Content-Type: application/json" -d "{ \"PolyId\": \"${ID}\" }" | cat | jq '.' > ./response-data/deleteprofile-response.json
+
+cat ./response-data/deleteprofile-response.json
 
 echo
-echo "FINIS DeleteProfile: $(date)"
+echo "END   DeleteProfile: $(date)"
 echo
 
 ;;
+
+#DeleteProfile)
+#  -- PUT /piivault/api/profiles/ForgetProfile --
+#
+#echo
+#echo "START /piivault/api/profiles/DeleteProfile: $(date)"
+#echo
+#
+#curl -k \
+# -X PUT "https://${HOSTNAME}/piivault/api/profiles/DeleteProfile" \
+# -H "Authorization: Bearer ${API_TOKEN}" \
+# -H "Content-Type: application/json" \
+# -H "Content-Type: application/json" -d @${REQUEST}
+#
+#echo
+#echo "FINIS DeleteProfile: $(date)"
+#echo
+#
+#;;
 
 PurgeAccountProfile)
 ## -- PUT PurgeAccountProfiles --
@@ -352,7 +372,7 @@ echo
 echo "START GetSecondaryPolyId: $(date)"
 echo
 
-time curl -k -v \
+time curl -k \
  -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetSecondaryPolyId" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
@@ -373,7 +393,7 @@ echo
 echo "START GetProfileBySourceSystemKey: $(date)"
 echo
 
-time curl -v -k \
+time curl -k \
  -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetProfile" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
@@ -393,7 +413,7 @@ echo
 echo "START GetProfile: $(date)"
 echo
 
-time curl -v -k \
+time curl -k \
  -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetProfile" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \

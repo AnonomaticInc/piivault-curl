@@ -21,6 +21,7 @@ __root="$(cd "$(dirname "${__dir}")" && pwd)" # <-- change this as it depends on
 # ./curl-commands.sh --VERB login
 # ./curl-commands.sh --VERB login && time ./curl-commands.sh --VERB GetPolyIdBulk --REQUEST ./request-data/test-profiles-1000.1.json 
 
+HOSTP=http
 HOSTNAME=${PIIVAULT_HOSTNAME}
 ACCOUNTID=${PIIVAULT_ACCOUNTID}
 APIKEY=${PIIVAULT_APIKEY}
@@ -45,7 +46,7 @@ login)
 rm -f api-token.txt
 
 curl -k \
-	-X POST "https://${HOSTNAME}/passthrough/api/auth/login" \
+	-X POST "${HOSTP}://${HOSTNAME}/passthrough/api/auth/login" \
 	-H "Content-Type: application/json" \
 -d "{ \"AccountId\": \"${ACCOUNTID}\", \"ApiKey\": \"${APIKEY}\" }" \
 > api-token.txt
@@ -66,7 +67,7 @@ loginWithSunder)
 rm -f api-token.txt
 
 curl -k \
-	-X POST "https://${HOSTNAME}/passthrough/api/auth/login" \
+	-X POST "${HOSTP}://${HOSTNAME}/passthrough/api/auth/login" \
 	-H "Content-Type: application/json" \
 -d "{ \"AccountId\": \"${ACCOUNTID}\", \"ApiKey\": \"${APIKEY}\", \"SunderId\": \"${SUNDERID}\" }" \
 > api-token.txt
@@ -100,7 +101,7 @@ echo "START //${HOSTNAME}/passthrough/api/schema/DeleteSchema/${SCHEMAID}"
 echo
 
 time curl -k \
- -X PUT "https://${HOSTNAME}/passthrough/api/schema/DeleteSchema/${SCHEMAID}" \
+ -X PUT "${HOSTP}://${HOSTNAME}/passthrough/api/schema/DeleteSchema/${SCHEMAID}" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" | jq '.' > ./response-data/deleteschema-response.json
 
@@ -119,7 +120,7 @@ echo "START //${HOSTNAME}/passthrough/api/schema/GetSchema/${SCHEMAID}"
 echo
 
 time curl -k \
- -X GET "https://${HOSTNAME}/passthrough/api/schema/GetSchema/${SCHEMAID}" \
+ -X GET "${HOSTP}://${HOSTNAME}/passthrough/api/schema/GetSchema/${SCHEMAID}" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" | jq '.' > ./response-data/getschema-response.json
 
@@ -138,7 +139,7 @@ echo "START //${HOSTNAME}/passthrough/api/GetSchemaDictionary"
 echo
 
 time curl -k \
- -X GET "https://${HOSTNAME}/passthrough/api/schema/GetSchemaDictionary" \
+ -X GET "${HOSTP}://${HOSTNAME}/passthrough/api/schema/GetSchemaDictionary" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" | jq '.' > ./response-data/getschemadictionary-response.json
 
@@ -157,7 +158,7 @@ echo "START //${HOSTNAME}/passthrough/api/schema/GetAllSchemas"
 echo
 
 time curl -k \
- -X GET "https://${HOSTNAME}/passthrough/api/schema/GetAllSchemas" \
+ -X GET "${HOSTP}://${HOSTNAME}/passthrough/api/schema/GetAllSchemas" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" | jq '.' > ./response-data/getallschemas-response.json
 
@@ -176,7 +177,7 @@ echo "START //${HOSTNAME}/passthrough/api/schema/ListSchema/${SCHEMAID}"
 echo
 
 time curl -k \
- -X GET "https://${HOSTNAME}/passthrough/api/schema/ListSchema/${SCHEMAID}" \
+ -X GET "${HOSTP}://${HOSTNAME}/passthrough/api/schema/ListSchema/${SCHEMAID}" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" | jq '.' > ./response-data/listschema-response.json
 
@@ -195,7 +196,7 @@ echo "START //${HOSTNAME}/passthrough/api/schema/ListAllSchemas"
 echo
 
 time curl -k \
- -X GET "https://${HOSTNAME}/passthrough/api/schema/ListAllSchemas" \
+ -X GET "${HOSTP}://${HOSTNAME}/passthrough/api/schema/ListAllSchemas" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" | jq '.' > ./response-data/listallschemas-response.json
 
@@ -214,7 +215,7 @@ echo "START //${HOSTNAME}/passthrough/api/schema/ValidateSchema"
 echo
 
 time curl -k \
- -X POST "https://${HOSTNAME}/passthrough/api/schema/ValidateSchema" \
+ -X POST "${HOSTP}://${HOSTNAME}/passthrough/api/schema/ValidateSchema" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/validateschema-response.json
 
@@ -233,9 +234,9 @@ echo "START //${HOSTNAME}/passthrough/api/schema/SaveSchema"
 echo
 
 time curl -k \
- -X POST "https://${HOSTNAME}/passthrough/api/schema/SaveSchema" \
+ -X POST "${HOSTP}://${HOSTNAME}/passthrough/api/schema/SaveSchema" \
  -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/saveschema-response.json
+ -H "Content-Type: application/json" -d @${REQUEST} | cat | jq '.' > ./response-data/saveschema-response.json
 
 echo
 echo "FINIS SaveSchema"
@@ -252,7 +253,7 @@ echo "START //${HOSTNAME}/passthrough/api/profiles/PassthroughAnonymize"
 echo
 
 time curl -k \
- -X POST "https://${HOSTNAME}/passthrough/api/profiles/PassthroughAnonymize" \
+ -X POST "${HOSTP}://${HOSTNAME}/passthrough/api/profiles/PassthroughAnonymize" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/passthroughanonymize-response.json
 
@@ -271,7 +272,7 @@ echo "START //${HOSTNAME}/passthrough/api/profiles/PassthroughMask"
 echo
 
 time curl -k \
- -X POST "https://${HOSTNAME}/passthrough/api/profiles/PassthroughMask" \
+ -X POST "${HOSTP}://${HOSTNAME}/passthrough/api/profiles/PassthroughMask" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/passthroughmask-response.json
 
@@ -283,16 +284,16 @@ cat ./response-data/passthroughanonymize-response.json
 
 ;;
 
-PassthroughReidentify)
+PassthroughReIdentify)
 
 echo
-echo "START //${HOSTNAME}/passthrough/api/profiles/PassthroughReidentify"
+echo "START //${HOSTNAME}/passthrough/api/profiles/PassthroughReIdentify"
 echo
 
 time curl -k \
- -X POST "https://${HOSTNAME}/passthrough/api/profiles/PassthroughReidentify" \
+ -X POST "${HOSTP}://${HOSTNAME}/passthrough/api/profiles/PassthroughReIdentify" \
  -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/passthroughreidentify-response.json
+ -H "Content-Type: application/json" -d @${REQUEST} | cat | jq '.' > ./response-data/passthroughreidentify-response.json
 
 echo
 echo "FINIS PassthroughReIdentify"

@@ -26,11 +26,11 @@ APIKEY=${PIIVAULT_APIKEY}
 SUNDERID=${PIIVAULT_SUNDERID}
 
 while [ $# -gt 0 ]; do
-
-   if [[ $1 == *"--"* ]]; then
+#   echo $1
+   if [[ $1 == "--"* ]]; then
         param="${1/--/}"
         declare $param="$2"
-        echo $1 $2
+#        echo $1 $2
    fi
 
   shift
@@ -145,6 +145,27 @@ head -n 25 ./response-data/getpolyidbulk-response.json
 
 echo
 echo "FINIS GetPolyIdBulk: $(date)"
+echo
+
+;;
+
+GetProfileIds)
+## -- PUT PolyIdBulk --
+
+echo
+echo "START //${HOSTNAME}/piivault/api/profiles/GetProfileIds: $(date)"
+echo
+
+curl -s -k --compressed \
+ -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetProfileIds" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/getprofileids-response.json
+
+head -n 25 ./response-data/getprofileids-response.json
+
+echo
+echo "FINIS GetProfileIds: $(date)"
 echo
 
 ;;
@@ -389,21 +410,21 @@ echo
 
 GetProfileBySourceSystemKey)
 ## -- Generate match table --
-echo
-echo "START GetProfileBySourceSystemKey: $(date)"
-echo
+#echo
+#echo "START GetProfileBySourceSystemKey: $(date)"
+#echo
 
-time curl -k \
+curl -s -k \
  -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetProfile" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d "{ \"SourceSystemKey\": \"${ID}\" }" | jq '.' > ./response-data/getprofile-response.json
+ -H "Content-Type: application/json" -d "{ \"SourceSystemKey\": \"${ID}\" }" | cat | jq '.' > ./response-data/getprofile-response.json
 
-cat ./response-data/getprofile-response.json
+#cat ./response-data/getprofile-response.json
 
-echo
-echo "END   GetProfileBySourceSystemKey: $(date)"
-echo
+#echo
+#echo "END   GetProfileBySourceSystemKey: $(date)"
+#echo
 
 ;;
 
@@ -417,9 +438,9 @@ time curl -k \
  -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetProfile" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d "{ \"PolyId\": \"${ID}\" }" | jq '.' > ./response-data/getprofile-response.json
+ -H "Content-Type: application/json" -d "{ \"PolyId\": \"${ID}\" }" | cat | jq '.' > ./response-data/getprofile-response.json
 
-cat ./response-data/getprofile-response.json
+#cat ./response-data/getprofile-response.json
 
 echo
 echo "END   GetProfile: $(date)"

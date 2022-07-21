@@ -22,7 +22,7 @@ __root="$(cd "$(dirname "${__dir}")" && pwd)" # <-- change this as it depends on
 # ./curl-commands.sh --VERB login && time ./curl-commands.sh --VERB GetPolyIdBulk --REQUEST ./request-data/test-profiles-1000.1.json 
 
 HOSTP=http
-HOSTNAME=${PIIVAULT_HOSTNAME}
+HOSTNAME=${PASSTHROUGH_HOSTNAME}
 ACCOUNTID=${PIIVAULT_ACCOUNTID}
 APIKEY=${PIIVAULT_APIKEY}
 SUNDERID=${PIIVAULT_SUNDERID}

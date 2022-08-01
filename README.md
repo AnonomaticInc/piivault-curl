@@ -24,15 +24,31 @@ You can create a Trial subscription at our [online demo instance](https://api.an
 ---
 #### PIIVault Curl Example ####
 
+The bash scripts require __cURL__ and __jq__. On debian based systems you can install these with
+
+    sudo apt update
+    sudo apt upgrade
+    sudo apt install curl
+    sudo apt install jq
+
+
+Example of loading profile data into the vault
+
+
     export PIIVAULT_HOSTNAME="localhost:9443"
     export PIIVAULT_ACCOUNTID=<subscription-account-id>
     export PIIVAULT_APIKEY=<subscription-account-apikey>
 
     rm getpolyidbulk-reponse.json
 
-    ./curl-commands.sh --VERB login
+    ./piivault-commands.sh --VERB login
 
-    time ./curl-commands.sh --VERB GetPolyIdBulk --REQUEST ./test-profiles-100.1.json
+    time ./piivault-curl.sh --VERB GetPolyIdBulk --REQUEST ./test-profiles-100.1.json
 
     less getpolyidbulk-reponse.json
+
+#### See commands available in bash scripts. See scripts for details of parameters. ####
+
+    grep -Ei "^\w+\)" piivault-curl.sh
+    grep -Ei "^\w+\)" passthrough-curl.sh
 

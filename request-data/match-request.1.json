@@ -2,9 +2,11 @@
 "AccountIds": [ ],
 "MatchProcs": [
 		{
-			"Name": "TestProc",
-			"MatchFields": ["StreetAddress1"],
-			"Expr": "LHS.StreetAddress1 ='049 Jakubowski Mills'"
+			"Name": "lausd",
+			"Indexes": [["DateOfBirth","LastName"],["FirstName"]],
+			"LhsStep": 1000000,
+			"RhsStep": 100000,
+			"Expr": "((RHS.DateOfBirth = LHS.DateOfBirth) and (RHS.Gender = LHS.Gender)  and (LHS.LastName = RHS.LastName) and (soundex(LHS.FirstName) = soundex(RHS.Firstname))) and ((LHS.FirstName <> '' and LHS.LastName != ''))"
 		}
 	]
 }

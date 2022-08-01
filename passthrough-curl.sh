@@ -21,15 +21,19 @@ __root="$(cd "$(dirname "${__dir}")" && pwd)" # <-- change this as it depends on
 # ./curl-commands.sh --VERB login
 # ./curl-commands.sh --VERB login && time ./curl-commands.sh --VERB GetPolyIdBulk --REQUEST ./request-data/test-profiles-1000.1.json 
 
-HOSTP=http
+HOSTP=https
 HOSTNAME=${PASSTHROUGH_HOSTNAME}
 ACCOUNTID=${PIIVAULT_ACCOUNTID}
 APIKEY=${PIIVAULT_APIKEY}
 SUNDERID=${PIIVAULT_SUNDERID}
 
+if [[ $HOSTNAME == "" ]]; then
+HOSTNAME=${PIIVAULT_HOSTNAME}
+fi
+
 while [ $# -gt 0 ]; do
 
-   if [[ $1 == *"--"* ]]; then
+   if [[ $1 == "--"* ]]; then
         param="${1/--/}"
         declare $param="$2"
         echo $1 $2

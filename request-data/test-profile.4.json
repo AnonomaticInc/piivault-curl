@@ -1,69 +1,50 @@
+{
+"Profiles": [
     {
       "Index": 1,
-      "Seed": 97,
+      "PolyId": "7a46fe94-afd7-295b-cf61-b33e243b8344",
       "SourceSystemKey": "82bf97a1-6eec-4a1d-8670-598805828111",
-      "FirstName": "Godfrey",
-      "MiddleName": "X",
-      "LastName": "Schroeder",
-      "OrgName": "vertical applications",
+      "FirstName": "",
+      "MiddleName": "J",
+      "LastName": "Lawrence",
+      "OrgName": "",
       "DateOfBirth": "1952-03-01T00:00:00.000Z",
       "Gender": "Trans*Woman",
-      "IsForgotten": 0,
-      "Emails": [
-        {
-          "EmailAddressType": "Work",
-          "EmailAddress": "Norene11@example.net"
-        },
-        {
-          "EmailAddressType": "Home",
-          "EmailAddress": "Terrill.Terry@gmail.com"
-        }
+      "Names": [
+	      {
+                "FirstName": "Godfrey",
+                "MiddleName": "X",
+                "LastName": "Schroeder"
+	      },
+	      {
+                "FirstName": "Godfrey",
+                "MiddleName": "X",
+                "LastName": "Schroeder"
+	      }
       ],
-      "Phones": [
-        {
-          "PhoneType": "Mobile",
-          "PhoneOwner": "Kreiger Group",
-          "PhoneNumber": "934-342-7440 x17844"
-        },
-        {
-          "PhoneType": "Work",
-          "PhoneOwner": "Dietrich, Schmidt and Emard",
-          "PhoneNumber": "1-717-645-8572"
-        }
-      ],
-      "Addresses": [
-        {
-          "AddressType": "Home",
-          "StreetAddress1": "3245 Dagmar Inlet",
-          "StreetAddress2": "Suite 042",
-          "City": "Alexaneville",
-          "StateCode": "Washington",
-          "PostalCode": "16055-8592",
-          "County": "Buckinghamshire",
-          "Country": "Lao People's Democratic Republic"
-        },
-        {
-          "AddressType": "Work",
-          "StreetAddress1": "004 Leann Gateway",
-          "StreetAddress2": "Suite 857",
-          "City": "Sierraton",
-          "StateCode": "Idaho",
-          "PostalCode": "87125",
-          "County": "Buckinghamshire",
-          "Country": "Cyprus"
-        }
-      ],
-      "Keys": [
-        {
-          "KeyType": "Vehicle",
-          "KeyValue": "SCKU0A91VXKJ31651"
-        },
-        {
-          "KeyType": "SecretKey",
-          "KeyValue": "voluptas omnis et"
-        }
+      "Orgs": [
+      {
+        "OrgName": "cushone!",
+        "CreatedAt": "2022-07-15T19:04:10.5938284"
+      }
       ],
       "SourceSystemName": "Pollich LLC",
       "SubSourceSystemName": "District Implementation Planner"
+    },
+
+    {
+      "Index": 2,
+      "PolyId": "4fb4a4b6-7e17-e0bb-801b-0b9d10ae6f78",
+      "SourceSystemKey": "82bf97a1-6eec-4a1d-8670-598805828112",
+      "FirstName": "",
+      "MiddleName": "",
+      "LastName": "",
+      "OrgName": null,
+      "DateOfBirth": "1952-03-01T00:00:00.000Z",
+      "Gender": "Trans*Woman",
+      "Names": [ ],
+      "SourceSystemName": "Pollich LLC",
+      "SubSourceSystemName": "District Implementation Planner"
     }
-    
+]
+}

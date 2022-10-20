@@ -118,39 +118,36 @@ curl -k \
  -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetPolyId" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST}  | jq '.' > ./response-data/getpolyid-response.json
+ -H "Content-Type: application/json" -d @${REQUEST}  > ./response-data/getpolyid-response.json
 
 echo
 echo "FINIS GetPolyId: $(date)"
 echo
 
-cat ./response-data/getpolyid-response.json
+cat ./response-data/getpolyid-response.json | jq '.' | head -n 25
 
 ;;
 
-GetPolyIdBulk)
-## -- PUT PolyIdBulk --
+GetProfileSourceSystemKey)
 
 echo
-echo "START //${HOSTNAME}/piivault/api/profiles/GetPolyIdBulk: $(date)"
+echo "START //${HOSTNAME}/piivault/api/profiles/GetProfileIds: $(date)"
 echo
 
 curl -s -k --compressed \
- -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetPolyIdBulk" \
+ -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetProfileIds" \
  -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/getpolyidbulk-response.json
+ -H "Content-Type: application/json" -d "{ \"Ids\": [{ \"Index\": 1, \"PolyId\": \"${ID}\" }] \"" > ./response-data/getprofileids-response.json
 
-head -n 25 ./response-data/getpolyidbulk-response.json
+cat ./response-data/getprofileids-response.json | jq '.' | head -n 25
 
 echo
-echo "FINIS GetPolyIdBulk: $(date)"
+echo "FINIS GetProfileIds: $(date)"
 echo
 
 ;;
 
-GetProfileIds)
-## -- PUT PolyIdBulk --
+GetProfilePolyId)
 
 echo
 echo "START //${HOSTNAME}/piivault/api/profiles/GetProfileIds: $(date)"
@@ -160,9 +157,29 @@ curl -s -k --compressed \
  -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetProfileIds" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/getprofileids-response.json
+ -H "Content-Type: application/json"  -d "{ \"Ids\": [{ \"Index\": 1, \"SourceSystemKey\": \"${ID}\" }] \"" > ./response-data/getprofileids-response.json
 
-head -n 25 ./response-data/getprofileids-response.json
+cat ./response-data/getprofileids-response.json | jq '.' | head -n 25
+
+echo
+echo "FINIS GetProfileIds: $(date)"
+echo
+
+;;
+
+GetProfileIds)
+
+echo
+echo "START //${HOSTNAME}/piivault/api/profiles/GetProfileIds: $(date)"
+echo
+
+curl -s -k --compressed \
+ -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetProfileIds" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -H "Content-Type: application/json" -d @${REQUEST} > ./response-data/getprofileids-response.json
+
+cat ./response-data/getprofileids-response.json | jq '.' | head -n 25
 
 echo
 echo "FINIS GetProfileIds: $(date)"
@@ -171,7 +188,6 @@ echo
 ;;
 
 GetPolyIdWithPseudonym)
-## -- PUT PolyIdBulk --
 
 echo
 echo "START //${HOSTNAME}/piivault/api/profiles/GetPolyIdWithPseudonym: $(date)"
@@ -183,9 +199,9 @@ curl -s -k --compressed \
  -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetPolyIdWithPseudonym" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/getpolyid-response.json
+ -H "Content-Type: application/json" -d @${REQUEST} > ./response-data/getpolyid-response.json
 
-head -n 25 ./response-data/getpolyid-response.json
+cat ./response-data/getpolyid-response.json | jq '.' | head -n 25
 
 echo
 echo "FINIS GetPolyIdWithPseudonym: $(date)"
@@ -193,41 +209,19 @@ echo
 
 ;;
 
-GetPolyIdWithPseudonymBulk)
-## -- PUT PolyIdBulk --
+ForgetProfiles)
 
 echo
-echo "START //${HOSTNAME}/piivault/api/profiles/GetPolyIdWithPseudonymBulk: $(date)"
-echo
-
-rm -f ./response-data/getpolyidwithpseudonym-response.json
-
-curl -s -k --compressed \
- -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetPolyIdWithPseudonymBulk" \
- -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/getpolyidpseudonym-reponse.json
-
-head -n 25 ./response-data/getpolyidpseudonym-reponse.json
-
-echo
-echo "FINIS GetPolyIdWithPseudonymBulk: $(date)"
-echo
-
-;;
-
-ForgetProfile)
-#  -- PUT /piivault/api/profiles/ForgetProfile --
-
-echo
-echo "START /piivault/api/profiles/ForgetProfile: $(date)"
+echo "START ForgetProfile: $(date)"
 echo
 
 curl -k \
  -X PUT "https://${HOSTNAME}/piivault/api/profiles/ForgetProfile" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST}
+ -H "Content-Type: application/json" -d @${REQUEST} > ./response-data/forgetprofile-response.json
+
+cat ./response-data/forgetprofile-reponse.json | jq '.' | head -n 25
 
 echo
 echo "FINIS ForgetProfile: $(date)"
@@ -235,8 +229,49 @@ echo
 
 ;;
 
-DeleteProfile)
-## -- Generate match table --
+ForgetProfileByPolyId)
+
+echo
+echo "START ForgetProfile: $(date)"
+echo
+
+curl -k \
+ -X PUT "https://${HOSTNAME}/piivault/api/profiles/ForgetProfile" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -H "Content-Type: application/json" -d "{ \"Ids\": [{ \"Index\": 1, \"PolyId\": \"${ID}\" }] \"" > ./response-data/forgetprofile-response.json
+
+cat ./response-data/forgetprofile-reponse.json | jq '.' | head -n 25
+
+echo
+echo "FINIS ForgetProfile: $(date)"
+echo
+
+;;
+
+ForgetProfileBySourceSystemKey)
+
+echo
+echo "START ForgetProfile: $(date)"
+echo
+
+curl -k \
+ -X PUT "https://${HOSTNAME}/piivault/api/profiles/ForgetProfile" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -H "Content-Type: application/json" -d "{ \"Ids\": [{ \"Index\": 1, \"SourceSystemKey\": \"${ID}\" }] \"" > ./response-data/forgetprofile-response.json
+
+
+cat ./response-data/forgetprofile-reponse.json | jq '.' | head -n 25
+
+echo
+echo "FINIS ForgetProfile: $(date)"
+echo
+
+;;
+
+DeleteProfiles)
+
 echo
 echo "START DeleteProfile: $(date)"
 echo
@@ -245,9 +280,9 @@ time curl -k \
  -X PUT "https://${HOSTNAME}/piivault/api/profiles/DeleteProfile" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d "{ \"PolyId\": \"${ID}\" }" | cat | jq '.' > ./response-data/deleteprofile-response.json
+ -H "Content-Type: application/json" -d @${REQUEST} > ./response-data/deleteprofile-response.json
 
-cat ./response-data/deleteprofile-response.json
+cat ./response-data/deleteprofile-response.json | jq '.' | head -n 20
 
 echo
 echo "END   DeleteProfile: $(date)"
@@ -255,27 +290,47 @@ echo
 
 ;;
 
-#DeleteProfile)
-#  -- PUT /piivault/api/profiles/ForgetProfile --
-#
-#echo
-#echo "START /piivault/api/profiles/DeleteProfile: $(date)"
-#echo
-#
-#curl -k \
-# -X PUT "https://${HOSTNAME}/piivault/api/profiles/DeleteProfile" \
-# -H "Authorization: Bearer ${API_TOKEN}" \
-# -H "Content-Type: application/json" \
-# -H "Content-Type: application/json" -d @${REQUEST}
-#
-#echo
-#echo "FINIS DeleteProfile: $(date)"
-#echo
-#
-#;;
+DeleteProfileByPolyId)
 
-PurgeAccountProfile)
-## -- PUT PurgeAccountProfiles --
+echo
+echo "START DeleteProfile: $(date)"
+echo
+
+time curl -k \
+ -X PUT "https://${HOSTNAME}/piivault/api/profiles/DeleteProfile" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -H "Content-Type: application/json" -d "{ \"Ids\": [{ \"Index\": 0, \"PolyId\": \"${ID}\" }]}" > ./response-data/deleteprofile-response.json
+
+cat ./response-data/deleteprofile-response.json | jq '.' | head -n 20
+
+echo
+echo "END   DeleteProfile: $(date)"
+echo
+
+;;
+
+DeleteProfileBySourceSystemKey)
+
+echo
+echo "START DeleteProfile: $(date)"
+echo
+
+time curl -k \
+ -X PUT "https://${HOSTNAME}/piivault/api/profiles/DeleteProfile" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -H "Content-Type: application/json" -d "{ \"Ids\": [{ \"Index\": 0, \"SourceSystemKey\": \"${ID}\" }]}" > ./response-data/deleteprofile-response.json
+
+cat ./response-data/deleteprofile-response.json | jq '.' | head -n 20
+
+echo
+echo "END   DeleteProfile: $(date)"
+echo
+
+;;
+
+PurgeAccountProfiles)
 
 echo
 echo "START /piivault/api/profiles/PurgeAccountProfiles: $(date)"
@@ -293,7 +348,7 @@ echo
 ;;
 
 CancelMatchTask)
-## -- Generate match table --
+
 echo
 echo "START CancelMatchTask: $(date)"
 echo
@@ -311,7 +366,7 @@ echo
 ;;
 
 ExecuteMatch)
-## -- Generate match table --
+
 echo
 echo "START ExecuteMatchTask: $(date)"
 echo
@@ -331,7 +386,7 @@ head -n 25 ./response-data/execute-match.json
 ;;
 
 TestMatch)
-## -- Generate match table --
+
 echo
 echo "START TestMatchTask: $(date)"
 echo
@@ -339,7 +394,6 @@ echo
 time curl -k \
  -X PUT "https://${HOSTNAME}/piivault/api/match/TestMatchTask" \
  -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" \
  -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/test-match.json
 
 echo
@@ -350,29 +404,27 @@ head -n 25 ./response-data/test-match.json
 
 ;;
 
-GetMatchTaskResult)
+GetMatchResult)
 
-## -- Get  match table --
 echo
-echo "START GetMatchTaskResult)"
+echo "START GetMatchResult)"
 echo
 
 curl -k \
- "https://${HOSTNAME}/piivault/api/match" \
- -H "Authorization: Bearer ${API_TOKEN}" | jq '.' >  ./response-data/match-response.json
+ -X PUT "https://${HOSTNAME}/piivault/api/match/GetMatchResult" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" -d @${REQUEST}  | jq '.' >  ./response-data/match-response.json
 
 echo
-echo "END   GetMatchTaskResult: $(date)"
+echo "END   GetMatchResult: $(date)"
 echo
 
 head -n 25 ./response-data/match-response.json
 
 ;;
 
-
 GetMatchTaskStatus)
 
-## -- Get  match table --
 echo
 echo "START GetMatchTaskStatus: $(date)"
 echo
@@ -388,7 +440,7 @@ echo
 ;;
 
 GetSecondaryPolyId)
-## -- Generate match table --
+
 echo
 echo "START GetSecondaryPolyId: $(date)"
 echo
@@ -407,29 +459,8 @@ echo
 
 ;;
 
+GetProfiles)
 
-GetProfileBySourceSystemKey)
-## -- Generate match table --
-#echo
-#echo "START GetProfileBySourceSystemKey: $(date)"
-#echo
-
-curl -s -k \
- -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetProfile" \
- -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d "{ \"SourceSystemKey\": \"${ID}\" }" | cat | jq '.' > ./response-data/getprofile-response.json
-
-#cat ./response-data/getprofile-response.json
-
-#echo
-#echo "END   GetProfileBySourceSystemKey: $(date)"
-#echo
-
-;;
-
-GetProfile)
-## -- Generate match table --
 echo
 echo "START GetProfile: $(date)"
 echo
@@ -438,12 +469,76 @@ time curl -k \
  -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetProfile" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d "{ \"PolyId\": \"${ID}\" }" | cat | jq '.' > ./response-data/getprofile-response.json
+ -d @${REQUEST} > ./response-data/getprofile-response.json
 
-#cat ./response-data/getprofile-response.json
+cat ./response-data/getprofile-response.json | jq '.' | head -n 20
 
 echo
 echo "END   GetProfile: $(date)"
+echo
+
+;;
+
+GetProfileBySourceSystemKey)
+
+echo
+echo "START GetProfileBySourceSystemKey: $(date)"
+echo
+
+curl -s -k \
+ -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetProfile" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -d "{ \"Ids\": [{ \"Index\": 1, \"SourceSystemKey\": \"${ID}\" }] }" > ./response-data/getprofile-response.json
+
+cat ./response-data/getprofile-response.json | jq '.' | head -n 20
+
+echo
+echo "END   GetProfileBySourceSystemKey: $(date)"
+echo
+
+;;
+
+GetProfileByPolyId)
+
+echo
+echo "START GetProfileByPolyId: $(date)"
+echo
+
+REQUEST="{\"Ids\":[{\"Index\":1,\"PolyId\":\"${ID}\"}]}"
+echo $REQUEST
+
+time curl -k \
+ -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetProfile" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -d "$REQUEST" > ./response-data/getprofile-response.json
+
+cat ./response-data/getprofile-response.json | jq '.' | head -n 20
+
+echo
+echo "END   GetProfileByPolyId: $(date)"
+echo
+
+;;
+
+GetProfilePseudonym)
+
+echo
+echo "START //${HOSTNAME}/piivault/api/profiles/GetProfilePseudonym: $(date)"
+echo
+
+time curl -k \
+ -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetProfilePseudonym" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -d @${REQUEST} > ./response-data/getprofilepseudonym-response.json
+
+
+cat ./response-data/getprofilepseudonym-response.json | jq '.' | head -n 20
+
+echo
+echo "FINIS GetProfilePseudonym: $(date)"
 echo
 
 ;;
@@ -458,10 +553,10 @@ time curl -k \
  -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetProfilePseudonym" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json"  -d "{ \"PolyId\": \"${POLYID}\", \"Seed\": ${SEED:-37} }" | jq '.' > ./response-data/getprofilepseudonym-response.json
+ -d "{ \"Ids\": [ { \"Index\": 1, \"PolyId\": \"${ID}\" }], \"Seed\": ${SEED:-37} }" | jq '.' > ./response-data/getprofilepseudonym-response.json
 
 
-cat ./response-data/getprofilepseudonym-response.json
+cat ./response-data/getprofilepseudonym-response.json | jq '.' | head -n 20
 
 echo
 echo "FINIS GetProfilePseudonym: $(date)"
@@ -479,10 +574,10 @@ time curl -k \
  -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetProfilePseudonym" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Type: application/json"  -d "{ \"SourceSystemKey\": \"${PROFILEID}\" }" | jq '.' > ./response-data/getprofilepseudonym-response.json
+ -d "{ \"Ids\": [ { \"Index\": 1, \"SourceSystemKey\": \"${ID}\"}], \"Seed\": ${SEED:-37} }" | jq '.' > ./response-data/getprofilepseudonym-response.json
 
 
-cat ./response-data/getprofilepseudonym-response.json
+cat ./response-data/getprofilepseudonym-response.json | jq '.' | head -n 20
 
 echo
 echo "FINIS GetProfilePseudonym: $(date)"

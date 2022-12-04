@@ -21,11 +21,14 @@ __root="$(cd "$(dirname "${__dir}")" && pwd)" # <-- change this as it depends on
 # ./curl-commands.sh --VERB login
 # ./curl-commands.sh --VERB login && time ./curl-commands.sh --VERB GetPolyIdBulk --REQUEST ./request-data/test-profiles-1000.1.json 
 
-HOSTP=http
+HOSTP=${HOSTP:-http}
 HOSTNAME=${PASSTHROUGH_HOSTNAME}
 ACCOUNTID=${PIIVAULT_ACCOUNTID}
 APIKEY=${PIIVAULT_APIKEY}
 SUNDERID=${PIIVAULT_SUNDERID}
+RESPONSE=${RESPONSE:-./response-data/passthroughapi-response.json}
+
+rm -f "${RESPONSE}"
 
 if [[ $HOSTNAME == "" ]]; then
 HOSTNAME=${PIIVAULT_HOSTNAME}
@@ -49,7 +52,7 @@ login)
 # -- POST login --
 rm -f api-token.txt
 
-curl -k \
+curl -S -s -k \
 	-X POST "${HOSTP}://${HOSTNAME}/passthrough/api/auth/login" \
 	-H "Content-Type: application/json" \
 -d "{ \"AccountId\": \"${ACCOUNTID}\", \"ApiKey\": \"${APIKEY}\" }" \
@@ -70,7 +73,7 @@ loginWithSunder)
 # -- POST login --
 rm -f api-token.txt
 
-curl -k \
+curl -S -s -k \
 	-X POST "${HOSTP}://${HOSTNAME}/passthrough/api/auth/login" \
 	-H "Content-Type: application/json" \
 -d "{ \"AccountId\": \"${ACCOUNTID}\", \"ApiKey\": \"${APIKEY}\", \"SunderId\": \"${SUNDERID}\" }" \
@@ -98,216 +101,192 @@ API_TOKEN=$(jq -r ".Data.Token" api-token.txt)
 case $VERB in
 
 # -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-DeleteSchema)
+DeleteSchema)  # SCHEMAID
 
 echo
-echo "START //${HOSTNAME}/passthrough/api/schema/DeleteSchema/${SCHEMAID}"
+echo "$(date): //${HOSTNAME}/passthrough/api/schema/DeleteSchema/${SCHEMAID}"
 echo
 
-time curl -k \
+time curl -S -s -k \
  -X PUT "${HOSTP}://${HOSTNAME}/passthrough/api/schema/DeleteSchema/${SCHEMAID}" \
  -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" | jq '.' > ./response-data/deleteschema-response.json
+ -H "Content-Type: application/json" > ${RESPONSE} 
 
 echo
-echo "FINIS DeleteSchema"
+echo "$(date): DeleteSchema"
 echo
-
-cat ./response-data/deleteschema-response.json
 
 ;;
 
-GetSchemaById)
+GetSchemaById) # SCHEMAID
 
 echo
-echo "START //${HOSTNAME}/passthrough/api/schema/GetSchema/${SCHEMAID}"
+echo "$(date): //${HOSTNAME}/passthrough/api/schema/GetSchema/${SCHEMAID}"
 echo
 
-time curl -k \
+time curl -S -s -k \
  -X GET "${HOSTP}://${HOSTNAME}/passthrough/api/schema/GetSchema/${SCHEMAID}" \
  -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" | jq '.' > ./response-data/getschema-response.json
+ -H "Content-Type: application/json" > ${RESPONSE}
 
 echo
-echo "FINIS GetSchema"
+echo "$(date): GetSchema"
 echo
-
-cat ./response-data/getschema-response.json
 
 ;;
 
 GetSchemaDictionary)
 
 echo
-echo "START //${HOSTNAME}/passthrough/api/GetSchemaDictionary"
+echo "$(date): //${HOSTNAME}/passthrough/api/GetSchemaDictionary"
 echo
 
-time curl -k \
+time curl -S -s -k \
  -X GET "${HOSTP}://${HOSTNAME}/passthrough/api/schema/GetSchemaDictionary" \
  -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" | jq '.' > ./response-data/getschemadictionary-response.json
+ -H "Content-Type: application/json" > ${RESPONSE}
 
 echo
-echo "FINIS GetSchema"
+echo "$(date): GetSchema"
 echo
-
-cat ./response-data/getschemadictionary-response.json
 
 ;;
 
 GetAllSchemas)
 
 echo
-echo "START //${HOSTNAME}/passthrough/api/schema/GetAllSchemas"
+echo "$(date): //${HOSTNAME}/passthrough/api/schema/GetAllSchemas"
 echo
 
-time curl -k \
+time curl -S -s -k \
  -X GET "${HOSTP}://${HOSTNAME}/passthrough/api/schema/GetAllSchemas" \
  -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" | jq '.' > ./response-data/getallschemas-response.json
+ -H "Content-Type: application/json" > ${RESPONSE}
 
 echo
-echo "FINIS GetAllSchemas"
+echo "$(date): GetAllSchemas"
 echo
-
-cat ./response-data/getallschemas-response.json
 
 ;;
 
-ListSchemaById)
+ListSchemaById) # SCHEMAID
 
 echo
-echo "START //${HOSTNAME}/passthrough/api/schema/ListSchema/${SCHEMAID}"
+echo "$(date): //${HOSTNAME}/passthrough/api/schema/ListSchema/${SCHEMAID}"
 echo
 
-time curl -k \
+time curl -S -s -k \
  -X GET "${HOSTP}://${HOSTNAME}/passthrough/api/schema/ListSchema/${SCHEMAID}" \
  -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" | jq '.' > ./response-data/listschema-response.json
+ -H "Content-Type: application/json" > ${RESPONSE}
 
 echo
-echo "FINIS ListSchema"
+echo "$(date): ListSchema"
 echo
-
-cat ./response-data/listschema-response.json
 
 ;;
 
 ListAllSchemas)
 
 echo
-echo "START //${HOSTNAME}/passthrough/api/schema/ListAllSchemas"
+echo "$(date): //${HOSTNAME}/passthrough/api/schema/ListAllSchemas"
 echo
 
-time curl -k \
+time curl -S -s -k \
  -X GET "${HOSTP}://${HOSTNAME}/passthrough/api/schema/ListAllSchemas" \
  -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" | jq '.' > ./response-data/listallschemas-response.json
+ -H "Content-Type: application/json" > ${RESPONSE}
 
 echo
-echo "FINIS ListAllSchemas"
+echo "$(date): ListAllSchemas"
 echo
-
-cat ./response-data/listallschemas-response.json
 
 ;;
 
 ValidateSchema)
 
 echo
-echo "START //${HOSTNAME}/passthrough/api/schema/ValidateSchema"
+echo "$(date): //${HOSTNAME}/passthrough/api/schema/ValidateSchema"
 echo
 
-time curl -k \
+time curl -S -s -k \
  -X POST "${HOSTP}://${HOSTNAME}/passthrough/api/schema/ValidateSchema" \
  -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/validateschema-response.json
+ -H "Content-Type: application/json" -d @${REQUEST} > ${RESPONSE}
 
 echo
-echo "FINIS ValidateSchema"
+echo "$(date): ValidateSchema"
 echo
-
-cat ./response-data/validateschema-response.json
 
 ;;
 
 SaveSchema)
 
 echo
-echo "START //${HOSTNAME}/passthrough/api/schema/SaveSchema"
+echo "$(date): START //${HOSTNAME}/passthrough/api/schema/SaveSchema"
 echo
 
-time curl -k \
+time curl -S -s -k \
  -X POST "${HOSTP}://${HOSTNAME}/passthrough/api/schema/SaveSchema" \
  -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" -d @${REQUEST} | cat | jq '.' > ./response-data/saveschema-response.json
+ -H "Content-Type: application/json" -d @${REQUEST} > ${RESPONSE}
 
 echo
-echo "FINIS SaveSchema"
+echo "$(date): FINIS SaveSchema"
 echo
-
-cat ./response-data/saveschema-response.json
 
 ;;
 
 PassthroughAnonymize)
 
 echo
-echo "START //${HOSTNAME}/passthrough/api/profiles/PassthroughAnonymize"
+echo "$(date): START //${HOSTNAME}/passthrough/api/profiles/PassthroughAnonymize"
 echo
 
-time curl -k \
+time curl -S -s -k \
  -X POST "${HOSTP}://${HOSTNAME}/passthrough/api/profiles/PassthroughAnonymize" \
  -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/passthroughanonymize-response.json
+ -H "Content-Type: application/json" -d @${REQUEST} > ${RESPONSE}
 
 echo
-echo "FINIS PassthroughAnonymize"
+echo "$(date): FINIS PassthroughAnonymize"
 echo
-
-cat ./response-data/passthroughanonymize-response.json
 
 ;;
 
 PassthroughMask)
 
 echo
-echo "START //${HOSTNAME}/passthrough/api/profiles/PassthroughMask"
+echo "$(date): START //${HOSTNAME}/passthrough/api/profiles/PassthroughMask"
 echo
 
-time curl -k \
+time curl -S -s -k \
  -X POST "${HOSTP}://${HOSTNAME}/passthrough/api/profiles/PassthroughMask" \
  -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/passthroughmask-response.json
+ -H "Content-Type: application/json" -d @${REQUEST} > ${RESPONSE}
 
 echo
-echo "FINIS PassthroughMask"
+echo "$(date): FINIS PassthroughMask"
 echo
-
-cat ./response-data/passthroughanonymize-response.json
 
 ;;
 
 PassthroughReIdentify)
 
 echo
-echo "START //${HOSTNAME}/passthrough/api/profiles/PassthroughReIdentify"
+echo "$(date): START //${HOSTNAME}/passthrough/api/profiles/PassthroughReIdentify"
 echo
 
-time curl -k \
+time curl -S -s -k \
  -X POST "${HOSTP}://${HOSTNAME}/passthrough/api/profiles/PassthroughReIdentify" \
  -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" -d @${REQUEST} | cat | jq '.' > ./response-data/passthroughreidentify-response.json
+ -H "Content-Type: application/json" -d @${REQUEST} > ${RESPONSE}
 
 echo
-echo "FINIS PassthroughReIdentify"
+echo "$(date): FINIS PassthroughReIdentify"
 echo
-
-cat ./response-data/passthroughreidentify-response.json
 
 ;;
-
-
 
 
 *)
@@ -319,4 +298,15 @@ echo
 ;;
 
 esac
+
+
+if [[ $VERBOSE > 0 ]]; then
+echo ---- [${RESPONSE}] -- ---- -- ---- -- ---- --
+cat ${RESPONSE} | head -c 1024
+echo
+echo
+cat ${RESPONSE} | jq '.' | head -n ${VERBOSE}
+echo
+echo ---- -- ---- -- ---- -- ---- -- ---- -- ---- --
+fi
 

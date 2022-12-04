@@ -796,11 +796,221 @@ cat ./response-data/deleteschema-response.json
 
 ;;
 
+Encrypt)
+
+echo
+echo "START //${HOSTNAME}/piivault/api/profiles/Encrypt"
+echo
+
+time curl -k \
+ -X POST "https://${HOSTNAME}/piivault/api/profiles/Encrypt" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" -d @${REQUEST}  > ./response-data/encrypt-response.json
+
+echo
+echo "FINIS Encrypt"
+echo
+
+cat ./response-data/encrypt-response.json | jq '.' | head -n 20
+
+;;
+
+Decrypt)
+
+echo
+echo "START //${HOSTNAME}/piivault/api/profiles/Decrypt"
+echo
+
+time curl -k \
+ -X POST "https://${HOSTNAME}/piivault/api/profiles/Decrypt" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" -d @${REQUEST}  > ./response-data/decrypt-response.json
+
+echo
+echo "FINIS Decrypt"
+echo
+
+cat ./response-data/decrypt-response.json | jq '.' | head -n 20
+
+;;
+
+PolyAnonymize)
+
+echo
+echo "START //${HOSTNAME}/piivault/api/profiles/PolyAnonymize"
+echo
+
+time curl -k \
+ -X POST "https://${HOSTNAME}/piivault/api/profiles/PolyAnonymize" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" -d @${REQUEST}  > ./response-data/polyanonymize-response.json
+
+echo
+echo "FINIS PolyAnonymize"
+echo
+
+cat ./response-data/polyanonymize-response.json | jq '.' | head -n 20
+
+;;
+
+DePolyAnonymize)
+
+echo
+echo "START //${HOSTNAME}/piivault/api/profiles/DePolyAnonymize"
+echo
+
+time curl -k \
+ -X POST "https://${HOSTNAME}/piivault/api/profiles/DePolyAnonymize" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" -d @${REQUEST}  > ./response-data/depolyanonymize-response.json
+
+echo
+echo "FINIS DePolyanonymize"
+echo
+
+cat ./response-data/depolyanonymize-response.json | jq '.' | head -n 20
+
+;;
+
+
+Encryptor)
+
+echo
+echo "START //${HOSTNAME}/piivault/api/profiles/Encryptor"
+echo
+
+time curl -k \
+ -X POST "https://${HOSTNAME}/piivault/api/profiles/Encryptor" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" -d @${REQUEST}  > ./response-data/encryptor-response.json
+
+echo
+echo "FINIS Encryptor"
+echo
+
+cat ./response-data/encryptor-response.json | jq '.' | head -n 20
+
+;;
+
+Decryptor)
+
+echo
+echo "START //${HOSTNAME}/piivault/api/profiles/Decryptor"
+echo
+
+time curl -k \
+ -X POST "https://${HOSTNAME}/piivault/api/profiles/Decryptor" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" -d @${REQUEST}  > ./response-data/decryptor-response.json
+
+echo
+echo "FINIS Decryptor"
+echo
+
+cat ./response-data/decryptor-response.json | jq '.' | head -n 20
+
+;;
+
+
+CancelLookupTask)
+
+echo
+echo "START CancelLookupTask: $(date)"
+echo
+
+time curl -k \
+ -X PUT "https://${HOSTNAME}/piivault/api/lookup/CancelLookupTask" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -H "Content-Length: 0" | jq '.' > ./response-data/execute-lookup.json
+
+echo
+echo "END   CancelLookupTask: $(date)"
+echo
+
+;;
+
+ExecuteLookup)
+
+echo
+echo "START ExecuteLookupTask: $(date)"
+echo
+
+time curl -k \
+ -X POST "https://${HOSTNAME}/piivault/api/lookup" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/execute-lookup.json
+
+echo
+echo "END   ExecuteLookupTask: $(date)"
+echo
+
+head -n 25 ./response-data/execute-lookup.json
+
+;;
+
+TestLookup)
+
+echo
+echo "START TestLookupTask: $(date)"
+echo
+
+time curl -k \
+ -X PUT "https://${HOSTNAME}/piivault/api/lookup/TestLookupTask" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/test-lookup.json
+
+echo
+echo "END   TestLookupTask: $(date)"
+echo
+
+head -n 25 ./response-data/test-lookup.json
+
+;;
+
+GetLookupResult)
+
+echo
+echo "START GetLookupResult)"
+echo
+
+curl -k \
+ -X PUT "https://${HOSTNAME}/piivault/api/lookup/GetLookupResult" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" -d @${REQUEST}  | jq '.' >  ./response-data/lookup-response.json
+
+echo
+echo "END   GetLookupResult: $(date)"
+echo
+
+head -n 25 ./response-data/lookup-response.json
+
+;;
+
+GetLookupTaskStatus)
+
+echo
+echo "START GetLookupTaskStatus: $(date)"
+echo
+
+curl -k \
+ "https://${HOSTNAME}/piivault/api/lookup/GetLookupTaskStatus" \
+ -H "Authorization: Bearer ${API_TOKEN}" # | jq '.' >  ./response-data/lookup-status-response.json
+
+echo
+echo "END   GetLookupTaskStatus: $(date)"
+echo
+
+;;
+
+
 *)
 
 echo
 echo "Unknown command verb; check source"
 echo
+
 
 ;;
 

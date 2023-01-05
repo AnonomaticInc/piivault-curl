@@ -1,68 +1,71 @@
-    {
-      "Index": 1,
-      "Seed": 97,
-      "SourceSystemKey": "b7db2832-66c4-4934-9fd1-a0f65778a540",
-      "FirstName": "Lavina",
-      "MiddleName": "U",
-      "LastName": "Becker",
-      "OrgName": "clicks-and-mortar architectures",
-      "DateOfBirth": "1998-03-01T00:00:00.000Z",
-      "Gender": "Woman",
-      "IsForgotten": 0,
-      "Emails": [
-        {
-          "EmailAddressType": "Work",
-          "EmailAddress": "Wilhelmine_Weimann@example.com"
-        },
-        {
-          "EmailAddressType": "Home",
-          "EmailAddress": "Maximilian.Keeling32@gmail.com"
-        }
-      ],
-      "Phones": [
-        {
-          "PhoneType": "Mobile",
-          "PhoneOwner": "Auer - Cummings",
-          "PhoneNumber": "978.808.9217 x650"
-        },
-        {
-          "PhoneType": "Work",
-          "PhoneOwner": "Langworth - Bins",
-          "PhoneNumber": "711.903.4854 x888"
-        }
-      ],
-      "Addresses": [
-        {
-          "AddressType": "Home",
-          "StreetAddress1": "7831 Zella Ville",
-          "StreetAddress2": "Apt. 549",
-          "City": "Austin",
-          "StateCode": "Oregon",
-          "PostalCode": "11090-0079",
-          "County": "Avon",
-          "Country": "Niger"
-        },
-        {
-          "AddressType": "Work",
-          "StreetAddress1": "06990 Robel Forge",
-          "StreetAddress2": "Apt. 258",
-          "City": "Beierton",
-          "StateCode": "Hawaii",
-          "PostalCode": "37617-3491",
-          "County": "Cambridgeshire",
-          "Country": "Uzbekistan"
-        }
-      ],
-      "Keys": [
-        {
-          "KeyType": "Vehicle",
-          "KeyValue": "G4GA62MXP1ZD78344"
-        },
-        {
-          "KeyType": "SecretKey",
-          "KeyValue": "molestiae est suscipit"
-        }
-      ],
-      "SourceSystemName": "Boyle - Streich",
-      "SubSourceSystemName": "Forward Directives Strategist"
-    }
+{
+	"Profiles": [
+		{ "Index": 1,
+			"Seed": 97,
+			"SourceSystemKey": "b7db2832-66c4-4934-9fd1-a0f65778a540",
+			"FirstName": "Lavina",
+			"MiddleName": "U",
+			"LastName": "Becker",
+			"OrgName": "clicks-and-mortar architectures",
+			"DateOfBirth": "1998-03-01T00:00:00.000Z",
+			"Gender": "Woman",
+			"IsForgotten": 0,
+			"Emails": [
+				{
+					"EmailAddressType": "Work",
+					"EmailAddress": "Wilhelmine_Weimann@example.com"
+				},
+				{
+					"EmailAddressType": "Home",
+					"EmailAddress": "Maximilian.Keeling32@gmail.com"
+				}
+			],
+			"Phones": [
+				{
+					"PhoneType": "Mobile",
+					"PhoneOwner": "Auer - Cummings",
+					"PhoneNumber": "978.808.9217 x650"
+				},
+				{
+					"PhoneType": "Work",
+					"PhoneOwner": "Langworth - Bins",
+					"PhoneNumber": "711.903.4854 x888"
+				}
+			],
+			"Addresses": [
+				{
+					"AddressType": "Home",
+					"StreetAddress1": "7831 Zella Ville",
+					"StreetAddress2": "Apt. 549",
+					"City": "Austin",
+					"StateCode": "Oregon",
+					"PostalCode": "11090-0079",
+					"County": "Avon",
+					"Country": "Niger"
+				},
+				{
+					"AddressType": "Work",
+					"StreetAddress1": "06990 Robel Forge",
+					"StreetAddress2": "Apt. 258",
+					"City": "Beierton",
+					"StateCode": "Hawaii",
+					"PostalCode": "37617-3491",
+					"County": "Cambridgeshire",
+					"Country": "Uzbekistan"
+				}
+			],
+			"Keys": [
+				{
+					"KeyType": "Vehicle",
+					"KeyValue": "G4GA62MXP1ZD78344"
+				},
+				{
+					"KeyType": "SecretKey",
+					"KeyValue": "molestiae est suscipit"
+				}
+			],
+			"SourceSystemName": "Boyle - Streich",
+			"SubSourceSystemName": "Forward Directives Strategist"
+		}
+	]
+}

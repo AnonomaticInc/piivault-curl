@@ -1,4 +1,5 @@
 {
+	"Seed": 3773,
   "Profiles": [
     {
       "Index": 1,
@@ -12,11 +13,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Wilhelmine_Weimann@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Maximilian.Keeling32@gmail.com"
         }
       ],
@@ -79,11 +80,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Kira28@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Kris18@yahoo.com"
         }
       ],
@@ -146,11 +147,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Sarina.Donnelly@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Nona61@gmail.com"
         }
       ],
@@ -213,11 +214,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Isabelle_Wolff@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Ramon74@hotmail.com"
         }
       ],
@@ -280,11 +281,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Vivien95@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Francesco_Nitzsche@hotmail.com"
         }
       ],
@@ -347,11 +348,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Annabelle_Hackett40@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Elmer.Borer@gmail.com"
         }
       ],
@@ -414,11 +415,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Kristin_Lesch@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Sydnee17@yahoo.com"
         }
       ],
@@ -481,11 +482,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Bradly26@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Kailey66@yahoo.com"
         }
       ],
@@ -548,11 +549,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Marjory65@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Neil53@hotmail.com"
         }
       ],
@@ -615,11 +616,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Marianna30@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Vincenza_Okuneva@hotmail.com"
         }
       ],
@@ -682,11 +683,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Ida.Beahan@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Princess_Weimann@gmail.com"
         }
       ],
@@ -749,11 +750,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Madisen32@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Chandler.Schmeler71@gmail.com"
         }
       ],
@@ -816,11 +817,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Jovan_Bruen@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Jordy.Kunde@gmail.com"
         }
       ],
@@ -883,11 +884,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Kurt51@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Dallin89@hotmail.com"
         }
       ],
@@ -950,11 +951,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Willie_Raynor@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Martin_Yost86@gmail.com"
         }
       ],
@@ -1017,11 +1018,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Justyn.Bauch@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Joany20@hotmail.com"
         }
       ],
@@ -1084,11 +1085,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Yolanda_Bruen@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Dudley46@hotmail.com"
         }
       ],
@@ -1151,11 +1152,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Orville.Koss62@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Nicolette.Kuhn64@yahoo.com"
         }
       ],
@@ -1218,11 +1219,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Royce.Dicki@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Matilda_Swaniawski@hotmail.com"
         }
       ],
@@ -1285,11 +1286,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Rory_Jones@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Jeramy_Satterfield10@gmail.com"
         }
       ],
@@ -1352,11 +1353,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Helena_Reichert@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Karelle10@hotmail.com"
         }
       ],
@@ -1419,11 +1420,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Shayne.Kiehn@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Ona_Rohan@gmail.com"
         }
       ],
@@ -1486,11 +1487,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Janae81@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Camille_Treutel19@hotmail.com"
         }
       ],
@@ -1553,11 +1554,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Christ23@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Rosetta_Kassulke@hotmail.com"
         }
       ],
@@ -1620,11 +1621,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Tyrique48@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Jordy_Koch50@gmail.com"
         }
       ],
@@ -1687,11 +1688,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Daryl.Nitzsche@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Hattie.Cruickshank@hotmail.com"
         }
       ],
@@ -1754,11 +1755,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Adelbert_Quitzon88@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Mackenzie0@gmail.com"
         }
       ],
@@ -1821,11 +1822,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Antonio29@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Jamel39@hotmail.com"
         }
       ],
@@ -1888,11 +1889,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Shemar.Terry@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Dallin.Mueller@gmail.com"
         }
       ],
@@ -1955,11 +1956,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Marilie_Jenkins68@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Joe_Nienow@yahoo.com"
         }
       ],
@@ -2022,11 +2023,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Bernice_Schmidt13@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Carlotta_Stiedemann87@hotmail.com"
         }
       ],
@@ -2089,11 +2090,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Ashton_Funk20@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Destany.Koelpin@hotmail.com"
         }
       ],
@@ -2156,11 +2157,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Trey77@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Karelle.Hilll89@gmail.com"
         }
       ],
@@ -2223,11 +2224,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Lauriane74@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Rebecca9@yahoo.com"
         }
       ],
@@ -2290,11 +2291,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Sigrid.Pfannerstill18@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Muriel_Roob14@gmail.com"
         }
       ],
@@ -2357,11 +2358,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Rachel_Renner70@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Clint_Flatley11@gmail.com"
         }
       ],
@@ -2424,11 +2425,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Cleve9@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Anahi15@yahoo.com"
         }
       ],
@@ -2491,11 +2492,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Ova_Gleichner92@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Llewellyn8@gmail.com"
         }
       ],
@@ -2558,11 +2559,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Greta_Gibson@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Annetta.Daniel@gmail.com"
         }
       ],
@@ -2625,11 +2626,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Clementina.Breitenberg24@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Lela.Gislason96@hotmail.com"
         }
       ],
@@ -2692,11 +2693,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Cali60@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Suzanne_Donnelly53@hotmail.com"
         }
       ],
@@ -2759,11 +2760,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Jayde.Bruen@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Queenie_Bauch@hotmail.com"
         }
       ],
@@ -2826,11 +2827,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Dusty_Pagac@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Jacky.Cartwright70@hotmail.com"
         }
       ],
@@ -2893,11 +2894,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Natasha46@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Darlene.Auer@gmail.com"
         }
       ],
@@ -2960,11 +2961,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Kaelyn54@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Rubie.Swift@hotmail.com"
         }
       ],
@@ -3027,11 +3028,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Katrina_OKon24@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Braxton_Reilly78@gmail.com"
         }
       ],
@@ -3094,11 +3095,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Luther.Gerlach10@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Michaela.Block52@gmail.com"
         }
       ],
@@ -3161,11 +3162,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Wilmer_Hahn@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Rickie.Schmitt@yahoo.com"
         }
       ],
@@ -3228,11 +3229,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Dorothy42@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Elmo_Hand@hotmail.com"
         }
       ],
@@ -3295,11 +3296,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Brian.Dickens@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Jabari_Pagac28@gmail.com"
         }
       ],
@@ -3362,11 +3363,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Chandler_Dickinson@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Elna.Sporer@yahoo.com"
         }
       ],
@@ -3429,11 +3430,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Caden.Hilll9@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Thaddeus.Tromp@gmail.com"
         }
       ],
@@ -3496,11 +3497,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Glen_Ferry@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Jaunita.Ondricka33@yahoo.com"
         }
       ],
@@ -3563,11 +3564,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Gussie58@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Kacie_Rath@gmail.com"
         }
       ],
@@ -3630,11 +3631,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Kevin77@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Lexus23@yahoo.com"
         }
       ],
@@ -3697,11 +3698,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Hermann50@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Kaylee94@hotmail.com"
         }
       ],
@@ -3764,11 +3765,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Kylee_Maggio@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Kitty_Schmidt79@hotmail.com"
         }
       ],
@@ -3831,11 +3832,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Garrison_Lesch@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Jody.Howe82@hotmail.com"
         }
       ],
@@ -3898,11 +3899,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Shane62@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Allan_McGlynn@yahoo.com"
         }
       ],
@@ -3965,11 +3966,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Cecile55@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Melyna.Rice@hotmail.com"
         }
       ],
@@ -4032,11 +4033,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Montana.Kassulke46@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Frida.Klein20@yahoo.com"
         }
       ],
@@ -4099,11 +4100,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Imelda52@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Kieran68@hotmail.com"
         }
       ],
@@ -4166,11 +4167,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Kyle44@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Antonia50@gmail.com"
         }
       ],
@@ -4233,11 +4234,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Linwood.Rogahn63@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Antwan35@yahoo.com"
         }
       ],
@@ -4300,11 +4301,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Burnice81@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Alisa13@yahoo.com"
         }
       ],
@@ -4367,11 +4368,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Buford72@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Ali.Yundt51@yahoo.com"
         }
       ],
@@ -4434,11 +4435,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Berenice_Rogahn98@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Adan_Waelchi@hotmail.com"
         }
       ],
@@ -4501,11 +4502,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Summer_Feest@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Raymond_Pfeffer25@hotmail.com"
         }
       ],
@@ -4568,11 +4569,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Hubert25@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Lura20@hotmail.com"
         }
       ],
@@ -4635,11 +4636,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Sylvia_Gleichner@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Vaughn22@gmail.com"
         }
       ],
@@ -4702,11 +4703,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Dolly.Wyman71@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Cecile.Dach11@yahoo.com"
         }
       ],
@@ -4769,11 +4770,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Marley_Zboncak@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Presley_Morar@yahoo.com"
         }
       ],
@@ -4836,11 +4837,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Freda73@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Macey_Stroman21@gmail.com"
         }
       ],
@@ -4903,11 +4904,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Janick55@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Kellen82@yahoo.com"
         }
       ],
@@ -4970,11 +4971,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Janiya_Kerluke@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Willy.Cole40@gmail.com"
         }
       ],
@@ -5037,11 +5038,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Clarissa_Hauck@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Elian_Shields@gmail.com"
         }
       ],
@@ -5104,11 +5105,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Norris_Marquardt@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Dixie_Schinner40@yahoo.com"
         }
       ],
@@ -5171,11 +5172,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Sadie_Leffler@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Krystel92@yahoo.com"
         }
       ],
@@ -5238,11 +5239,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Turner93@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Edison.Erdman9@yahoo.com"
         }
       ],
@@ -5305,11 +5306,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Jimmy.Legros69@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Vita.Hickle91@hotmail.com"
         }
       ],
@@ -5372,11 +5373,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Yasmeen94@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Camden.Koepp@gmail.com"
         }
       ],
@@ -5439,11 +5440,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Jessica65@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Micah_Nikolaus32@yahoo.com"
         }
       ],
@@ -5506,11 +5507,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Akeem90@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Jada16@gmail.com"
         }
       ],
@@ -5573,11 +5574,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Kenneth.McCullough25@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Adeline50@gmail.com"
         }
       ],
@@ -5640,11 +5641,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Era26@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Hans.Emard61@hotmail.com"
         }
       ],
@@ -5707,11 +5708,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Izabella.Kirlin@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Macie_Durgan96@yahoo.com"
         }
       ],
@@ -5774,11 +5775,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Maybelle.West@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Genesis.Blanda@gmail.com"
         }
       ],
@@ -5841,11 +5842,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Mikayla61@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Mackenzie.Bartoletti@yahoo.com"
         }
       ],
@@ -5908,11 +5909,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Lura_Nienow@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Davonte_Frami@hotmail.com"
         }
       ],
@@ -5975,11 +5976,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Katelynn.Emard@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Abelardo18@hotmail.com"
         }
       ],
@@ -6042,11 +6043,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Coleman_Schaefer58@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Verlie_Gerhold@yahoo.com"
         }
       ],
@@ -6109,11 +6110,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Cleve_Bogan@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Alisha59@yahoo.com"
         }
       ],
@@ -6176,11 +6177,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Rachel.Hegmann8@example.org"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Cierra.Rempel@gmail.com"
         }
       ],
@@ -6243,11 +6244,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Osborne.Cruickshank@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Odell_Morissette@gmail.com"
         }
       ],
@@ -6310,11 +6311,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Rhea.Kub37@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Angela.Satterfield69@hotmail.com"
         }
       ],
@@ -6377,11 +6378,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Magdalena_Frami87@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Stone74@yahoo.com"
         }
       ],
@@ -6444,11 +6445,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Narciso6@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Arnoldo.Bernhard62@hotmail.com"
         }
       ],
@@ -6511,11 +6512,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Frankie86@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Jabari83@yahoo.com"
         }
       ],
@@ -6578,11 +6579,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Jace_Legros58@example.net"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Rubye_Borer56@gmail.com"
         }
       ],
@@ -6645,11 +6646,11 @@
       "IsForgotten": 0,
       "Emails": [
         {
-          "EmailAddressType": "Work",
+          "EmailType": "Work",
           "EmailAddress": "Etha44@example.com"
         },
         {
-          "EmailAddressType": "Home",
+          "EmailType": "Home",
           "EmailAddress": "Sean_Swift@yahoo.com"
         }
       ],

@@ -1,8 +1,8 @@
 {
-  "Profiles": [
-    {
-      "Index": 1,
-      "SourceSystemKey": "BobMusicalityMarley"
-    }
-    ]
+	"Profiles": [
+		{
+			"Index": 1,
+			"SourceSystemKey": "BobMusicalityMarley"
+		}
+	]
 }

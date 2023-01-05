@@ -911,96 +911,23 @@ cat ./response-data/decryptor-response.json | jq '.' | head -n 20
 
 ;;
 
-
-CancelLookupTask)
+SynchronousLookup)
 
 echo
-echo "START CancelLookupTask: $(date)"
+echo "START SynchronousLookup: $(date)"
 echo
 
 time curl -k \
- -X PUT "https://${HOSTNAME}/piivault/api/lookup/CancelLookupTask" \
+ -X PUT "https://${HOSTNAME}/piivault/api/lookup" \
  -H "Authorization: Bearer ${API_TOKEN}" \
  -H "Content-Type: application/json" \
- -H "Content-Length: 0" | jq '.' > ./response-data/execute-lookup.json
+ -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/synchronous-lookup-response.json
 
 echo
-echo "END   CancelLookupTask: $(date)"
+echo "END   SynchronousLookup: $(date)"
 echo
 
-;;
-
-ExecuteLookup)
-
-echo
-echo "START ExecuteLookupTask: $(date)"
-echo
-
-time curl -k \
- -X POST "https://${HOSTNAME}/piivault/api/lookup" \
- -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/execute-lookup.json
-
-echo
-echo "END   ExecuteLookupTask: $(date)"
-echo
-
-head -n 25 ./response-data/execute-lookup.json
-
-;;
-
-TestLookup)
-
-echo
-echo "START TestLookupTask: $(date)"
-echo
-
-time curl -k \
- -X PUT "https://${HOSTNAME}/piivault/api/lookup/TestLookupTask" \
- -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" -d @${REQUEST} | jq '.' > ./response-data/test-lookup.json
-
-echo
-echo "END   TestLookupTask: $(date)"
-echo
-
-head -n 25 ./response-data/test-lookup.json
-
-;;
-
-GetLookupResult)
-
-echo
-echo "START GetLookupResult)"
-echo
-
-curl -k \
- -X PUT "https://${HOSTNAME}/piivault/api/lookup/GetLookupResult" \
- -H "Authorization: Bearer ${API_TOKEN}" \
- -H "Content-Type: application/json" -d @${REQUEST}  | jq '.' >  ./response-data/lookup-response.json
-
-echo
-echo "END   GetLookupResult: $(date)"
-echo
-
-head -n 25 ./response-data/lookup-response.json
-
-;;
-
-GetLookupTaskStatus)
-
-echo
-echo "START GetLookupTaskStatus: $(date)"
-echo
-
-curl -k \
- "https://${HOSTNAME}/piivault/api/lookup/GetLookupTaskStatus" \
- -H "Authorization: Bearer ${API_TOKEN}" # | jq '.' >  ./response-data/lookup-status-response.json
-
-echo
-echo "END   GetLookupTaskStatus: $(date)"
-echo
+head -n 25 ./response-data/synchronous-lookup-response.json
 
 ;;
 

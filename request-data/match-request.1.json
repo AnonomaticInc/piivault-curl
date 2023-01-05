@@ -1,12 +1,11 @@
 {
-"AccountIds": [ ],
 "MatchProcs": [
 		{
-			"Name": "lausd",
-			"Indexes": [["DateOfBirth","LastName"],["FirstName"]],
+			"Name": "FindNH",
+			"Indexes": [["StateCode"]],
 			"LhsStep": 1000000,
 			"RhsStep": 100000,
-			"Expr": "((RHS.DateOfBirth = LHS.DateOfBirth) and (RHS.Gender = LHS.Gender)  and (LHS.LastName = RHS.LastName) and (soundex(LHS.FirstName) = soundex(RHS.Firstname))) and ((LHS.FirstName <> '' and LHS.LastName != ''))"
+			"Expr": "StateCode like '%Hampshire%'"
 		}
 	]
 }

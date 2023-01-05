@@ -1,5 +1,9 @@
 {
-  	"Seed": 997,
-        "SourceSystemKey": "b7db2832-66c4-4934-9fd1-a0f65778a540"
+	"Seed": 997,
+	"Ids": [
+		{
+			"SourceSystemKey": "b7db2832-66c4-4934-9fd1-a0f65778a540"
+		}
+	]
 }
 

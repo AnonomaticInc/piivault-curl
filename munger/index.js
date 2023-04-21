@@ -43,10 +43,10 @@ csv()
 
 			if (jsonFilePath) {
 				let dirname = fp.dirname(jsonFilePath);
-				let basename = fp.basename(jsonFilePath);
 				let extname = fp.extname(jsonFilePath);
+				let basename = fp.basename(jsonFilePath, extname);
 
-				let outfile = fp.join(dirname||'', (basename||'request')+'.'+index+'.'+(extname || 'json'));
+				let outfile = fp.join(dirname||'', (basename||'request')+'.'+index+(extname || '.json'));
 
 				fs.writeFileSync(outfile, opts.format ? JSON.stringify(result, null, 4) : JSON.stringify(result));
 			}

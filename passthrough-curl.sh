@@ -47,6 +47,31 @@ done
 
 case $VERB in
 
+clogin)
+# 1. Use the AccountId, and API Key provided by Anonomatic to get a Bearer Token
+# -- POST login --
+rm -f api-token.txt
+
+echo "{ \"AccountId\": \"${ACCOUNTID}\", \"ApiKey\": \"${APIKEY}\" }" > login.dat
+gzip login.dat
+
+curl -S -s -k \
+	-X POST "${HOSTP}://${HOSTNAME}/passthrough/api/auth/login" \
+	-H "Content-Type: application/json" \
+	-H "Content-Encoding: gzip" \
+        --data-binary "@./login.dat.gz" \
+> api-token.txt
+
+echo -- -- -- -- API TOKEN -- -- -- --
+cat api-token.txt
+echo
+echo -- -- -- -- API TOKEN -- -- -- --
+
+exit
+
+
+;;
+
 login)
 # 1. Use the AccountId, and API Key provided by Anonomatic to get a Bearer Token
 # -- POST login --
@@ -233,6 +258,28 @@ time curl -S -s -k \
 
 echo
 echo "$(date): FINIS SaveSchema"
+echo
+
+;;
+
+CPassthroughAnonymize)
+
+echo
+echo "$(date): START //${HOSTNAME}/passthrough/api/profiles/PassthroughAnonymize"
+echo
+
+ls -l ${REQUEST}*
+gzip -k "${REQUEST}"
+ls -l ${REQUEST}*
+
+time curl -S -s -k \
+ -X POST "${HOSTP}://${HOSTNAME}/passthrough/api/profiles/PassthroughAnonymize" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Type: application/json" \
+ -H "Content-Encoding: gzip" --data-binary "@${REQUEST}.gz" > ${RESPONSE}
+
+echo
+echo "$(date): FINIS PassthroughAnonymize"
 echo
 
 ;;

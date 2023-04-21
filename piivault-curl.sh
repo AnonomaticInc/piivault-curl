@@ -38,6 +38,30 @@ done
 
 case $VERB in
 
+clogin)
+# 1. Use the AccountId, and API Key provided by Anonomatic to get a Bearer Token
+# -- POST login --
+rm -f api-token.txt
+
+echo "{ \"AccountId\": \"${ACCOUNTID}\", \"ApiKey\": \"${APIKEY}\" }" > login.dat
+gzip login.dat
+
+curl -k \
+	-X POST "https://${HOSTNAME}/piivault/api/auth/login" \
+	-H "Content-Type: application/json" \
+	-H "Content-Encoding: gzip" \
+	--data-binary "@login.dat.gz" \
+> api-token.txt
+
+echo -- -- -- -- API TOKEN -- -- -- --
+cat api-token.txt
+echo
+echo -- -- -- -- API TOKEN -- -- -- --
+
+exit
+
+;;
+
 login)
 # 1. Use the AccountId, and API Key provided by Anonomatic to get a Bearer Token
 # -- POST login --
@@ -85,8 +109,13 @@ esac
 # 2. Copy the token from the JSON Payload of the above response to here (or use jq)
 # NOTE: This uses https://stedolan.github.io/jq/ to set the API_TOKEN
 
+#echo "##############################"
+#cat api-token.txt
+#echo "##############################"
 API_TOKEN=$(jq -r ".Data.Token" api-token.txt)
-
+#echo "##############################"
+#echo $API_TOKEN
+#echo "##############################"
 
 # 3. Try out the apis below!
 case $VERB in
@@ -104,6 +133,30 @@ curl -k \
 echo
 echo "FINIS GetKeyTypes: $(date)"
 echo
+
+;;
+
+CGetPolyId)
+## -- PUT GetPolyId --
+
+echo
+echo "START //${HOSTNAME}/piivault/api/profiles/GetPolyId: $(date)"
+echo
+ls -l ${REQUEST}*
+gzip -k "${REQUEST}"
+ls -l ${REQUEST}*
+
+curl -k \
+ -X PUT "https://${HOSTNAME}/piivault/api/profiles/GetPolyId" \
+ -H "Authorization: Bearer ${API_TOKEN}" \
+ -H "Content-Encoding: gzip" \
+ -H "Content-Type: application/json" --data-binary "@${REQUEST}.gz"  > ./response-data/getpolyid-response.json
+
+echo
+echo "FINIS GetPolyId: $(date)"
+echo
+
+cat ./response-data/getpolyid-response.json | jq '.' | head -n 25
 
 ;;
 

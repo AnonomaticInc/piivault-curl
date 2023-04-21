@@ -2,3 +2,4 @@
 *.swo
 ./response-data
 ./temp
+node_modules/
